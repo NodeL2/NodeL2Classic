@@ -16,7 +16,7 @@ function authUser(session, buffer) {
 }
 
 function consume(session, data) {
-    session.dataSend(ServerResponse.authResult());
+    session.dataSend(ServerResponse.authResult(-1, 0x00));
     session.dataSend(ServerResponse.charSelectInfo());
 }
 

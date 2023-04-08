@@ -1,11 +1,11 @@
 const PacketSend = invoke('Packet/Send');
 
-function authResult() {
+function authResult(status, reasonCode) {
     const packet = new PacketSend(0x0a);
 
     packet
-        .writeD(-1)    // Success
-        .writeD(0x00); // Reason
+        .writeD(status)
+        .writeD(reasonCode); // Failure reason
 
     return packet.fetchBuffer();
 }

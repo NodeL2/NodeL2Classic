@@ -13,8 +13,10 @@ function protocolVersion(session, buffer) {
 }
 
 function consume(session, data) {
+    const optn = options.default.GameServer;
+
     session.dataSend(
-        ServerResponse.versionCheck()
+        ServerResponse.cipherInit(data.protocolVersion === optn.protocol, optn)
     );
 }
 

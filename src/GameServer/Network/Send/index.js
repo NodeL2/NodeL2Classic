@@ -1,5 +1,5 @@
 module.exports = {
         authResult: require('./AuthResult'),
     charSelectInfo: require('./CharSelectInfo'),
-      versionCheck: require('./VersionCheck')
+        cipherInit: require('./CipherInit')
 };
