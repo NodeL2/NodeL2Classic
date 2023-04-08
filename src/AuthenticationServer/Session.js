@@ -18,6 +18,10 @@ class Session {
         );
     }
 
+    setAccountId(username) {
+        this.accountId = username;
+    }
+
     dataReceive(data) {
         // Weird, sometimes the packet is sent twofold/duplicated. I had to limit it based on the header size...
         const packet = data.slice(2, data.readInt16LE());

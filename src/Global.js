@@ -62,3 +62,7 @@ global.options = {
         utils.parseRawFile('./config/default.ini')
     )
 };
+
+global.path = {
+    databaseAuth: 'AuthenticationServer/Database/'
+};

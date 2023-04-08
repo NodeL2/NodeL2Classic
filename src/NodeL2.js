@@ -3,8 +3,8 @@ require('./Global');
 // User imports
 const AuthSession = invoke('AuthenticationServer/Session');
 const GameSession = invoke('GameServer/Session');
-const Database    = invoke('Database/Database');
 const Server      = invoke('Server');
+const Database    = invoke('Database');
 
 console.info('\n\
     + ==================================== \n\

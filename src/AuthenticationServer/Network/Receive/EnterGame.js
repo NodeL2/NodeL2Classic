@@ -16,9 +16,11 @@ function enterGame(session, buffer) {
 }
 
 function consume(session, data) {
+    const optn = options.default.GameServer;
+
     // Assert there's no attempt to force connect
-    if (data.secret !== session.secret) {
-        session.dataSend(ServerResponse.authFail(0x04));
+    if (data.secret !== session.secret || data.serverId !== optn.id) {
+        session.dataSend(ServerResponse.enterFail(0x04));
         return;
     }
 

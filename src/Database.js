@@ -1,5 +1,3 @@
-const SQL = require('like-sql'), builder = new SQL();
-
 const Database = {
     init: (callback) => {
         const optn = options.default.Database;
@@ -23,7 +21,12 @@ const Database = {
 
     execute: (sql) => {
         return Database.conn.query(sql[0], sql[1]);
-    }
+    },
+
+    // Authentication Server
+
+    createAccount     : invoke(path.databaseAuth + 'CreateAccount'),
+    fetchUserPassword : invoke(path.databaseAuth + 'FetchUserPassword')
 };
 
 module.exports = Database;

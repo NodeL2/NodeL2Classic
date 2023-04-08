@@ -1,5 +1,6 @@
 const ServerResponse = invoke('AuthenticationServer/Network/Send');
 const PacketReceive  = invoke('Packet/Receive');
+const Database       = invoke('Database');
 
 function authUser(session, buffer) {
     const packet = new PacketReceive(buffer);
@@ -19,16 +20,42 @@ function authUser(session, buffer) {
     });
 }
 
+function success(session, username) {
+    session.setAccountId(username);
+    session.dataSend(ServerResponse.authSuccess(session.secret));
+}
+
+function failure(session, reason) {
+    session.dataSend(ServerResponse.authFail(reason));
+}
+
 function consume(session, data) {
     // Assert there's no attempt to force connect
     if (data.sessionId !== session.sessionId) {
-        session.dataSend(ServerResponse.authFail(0x04));
+        failure(session, 0x04);
         return;
     }
 
-    session.dataSend(
-        ServerResponse.authSuccess(session.secret)
-    );
+    Database.fetchUserPassword(data.username).then((rows) => {
+        const password = rows[0]?.password;
+
+        // Username exists in database
+        if (password) {
+            data.password === password ? success(session, data.username) : failure(session, 0x02);
+        }
+        else { // User account does not exist, create if needed
+            const optn = options.default.AuthServer;
+
+            if (optn.autoCreate) {
+                Database.createAccount(data.username, data.password).then(() => {
+                    consume(session, data);
+                });
+            }
+            else { // Auto-create not permitted
+                failure(session, 0x04);
+            }
+        }
+    });
 }
 
 module.exports = authUser;

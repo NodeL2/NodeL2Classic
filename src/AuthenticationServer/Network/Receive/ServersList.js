@@ -20,8 +20,14 @@ function consume(session, data) {
         return;
     }
 
+    const hostname = session.socket.remoteAddress.split('.');
+    if (!['10', '127'].includes(hostname[0])) {
+        utils.infoFail('AuthServer', 'unhandled WAN Address');
+        return;
+    }
+
     session.dataSend(
-        ServerResponse.serversList('127.0.0.1'.split('.'))
+        ServerResponse.serversList(hostname, options.default.GameServer)
     );
 }
 
