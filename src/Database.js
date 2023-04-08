@@ -25,8 +25,9 @@ const Database = {
 
     // Authentication Server
 
-    createAccount     : invoke(path.databaseAuth + 'CreateAccount'),
-    fetchUserPassword : invoke(path.databaseAuth + 'FetchUserPassword')
+    createAccount      : invoke(path.databaseAuth + 'CreateAccount'),
+    fetchUserPassword  : invoke(path.databaseAuth + 'FetchUserPassword'),
+    fetchAllCharacters : invoke(path.databaseAuth + 'FetchAllCharacters')
 };
 
 module.exports = Database;

@@ -16,9 +16,9 @@ function serversList(hostname, stat, optn) {
         .writeC(optn.pvp)
         .writeH(stat.population)
         .writeH(optn.maxOnline)
-        .writeC(stat.up)
+        .writeC(0x01)  // Up or down
         .writeD(optn.kind)
-        .writeC(0x00)  // Server Brackets
+        .writeC(0x00)  // Brackets
         .writeH(0x00)  // ?
         .writeC(stat.characters)
         .writeC(optn.id)

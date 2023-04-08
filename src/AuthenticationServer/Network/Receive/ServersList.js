@@ -1,5 +1,6 @@
 const ServerResponse = invoke('AuthenticationServer/Network/Send');
 const PacketReceive  = invoke('Packet/Receive');
+const Database       = invoke('Database');
 
 function serversList(session, buffer) {
     const packet = new PacketReceive(buffer);
@@ -20,14 +21,17 @@ function consume(session, data) {
         return;
     }
 
-    const stats = {
-        up: true, population: 500, characters: 5
-    };
+    Database.fetchAllCharacters().then((rows) => {
+        const stats = {
+            population: utils.size(rows.filter((ob) => ob.isOnline)),
+            characters: utils.size(rows.filter((ob) => session.accountId === ob.username))
+        };
 
-    const hostname = session.socket.remoteAddress.split('.');
-    session.dataSend(
-        ServerResponse.serversList(hostname, stats, options.default.GameServer)
-    );
+        const hostname = session.socket.remoteAddress.split('.'); // TODO: Proper resolution
+        session.dataSend(
+            ServerResponse.serversList(hostname, stats, options.default.GameServer)
+        );
+    });
 }
 
 module.exports = serversList;
