@@ -32,6 +32,10 @@ global.utils = {
         return array.length;
     },
 
+    tuple() {
+        return new Array()
+    },
+
     tupleAlloc(count, data) {
         return new Array(count).fill(data);
     },

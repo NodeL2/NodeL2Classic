@@ -1,25 +1,30 @@
 const ServerResponse = invoke('AuthenticationServer/Network/Send');
 const Opcodes        = invoke('AuthenticationServer/Network/Opcodes');
+const QualifiedUsers = invoke('AuthenticationServer/QualifiedUsers');
 
 class Session {
     constructor(name, socket) {
         const optn = options.default.AuthServer;
 
-        this.name      = name;
-        this.socket    = socket;
-        this.sessionId = utils.randomNumber(0x80000000);
-        this.secret    = utils.randomNumber(0x80000000);
-        this.protocol  = optn.protocol;
-        this.blowfish  = Buffer.from(optn.blowfish, 'hex');
+        this.name     = name;
+        this.socket   = socket;
+        this.id       = utils.randomNumber(0x80000000);
+        this.secret   = utils.randomNumber(0x80000000);
+        this.protocol = optn.protocol;
+        this.blowfish = Buffer.from(optn.blowfish, 'hex');
 
         // First handshake from `Server` to `Client`
         this.dataSend(
-            ServerResponse.initLS(this.sessionId, this.protocol, this.blowfish)
+            ServerResponse.initLS(this.id, this.protocol, this.blowfish)
         );
     }
 
     setAccountId(username) {
         this.accountId = username;
+    }
+
+    userHasQualified() {
+        QualifiedUsers.insert(this.accountId, this.secret);
     }
 
     dataReceive(data) {

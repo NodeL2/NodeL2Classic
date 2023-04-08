@@ -24,9 +24,8 @@ function consume(session, data) {
         return;
     }
 
-    session.dataSend(
-        ServerResponse.enterSuccess(data.secret)
-    );
+    session.userHasQualified();
+    session.dataSend(ServerResponse.enterSuccess(data.secret));
 }
 
 module.exports = enterGame;

@@ -1,4 +1,5 @@
 const ServerResponse = invoke('GameServer/Network/Send');
+const QualifiedUsers = invoke('AuthenticationServer/QualifiedUsers');
 const PacketReceive  = invoke('Packet/Receive');
 
 function authUser(session, buffer) {
@@ -16,8 +17,13 @@ function authUser(session, buffer) {
 }
 
 function consume(session, data) {
-    session.dataSend(ServerResponse.authResult(-1, 0x00));
-    session.dataSend(ServerResponse.charSelectInfo());
+    if (QualifiedUsers.find(data.username, data.secret)) {
+        session.dataSend(ServerResponse.authResult(-1, 0x00));
+        session.dataSend(ServerResponse.charSelectInfo());
+        return;
+    }
+
+    session.dataSend(ServerResponse.authResult(0, 0x01));
 }
 
 module.exports = authUser;

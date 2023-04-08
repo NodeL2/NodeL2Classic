@@ -31,7 +31,7 @@ function failure(session, reason) {
 
 function consume(session, data) {
     // Assert there's no attempt to force connect
-    if (data.sessionId !== session.sessionId) {
+    if (data.sessionId !== session.id) {
         failure(session, 0x04);
         return;
     }

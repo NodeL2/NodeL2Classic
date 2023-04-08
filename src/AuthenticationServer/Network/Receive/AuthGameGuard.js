@@ -14,7 +14,7 @@ function authGameGuard(session, buffer) {
 
 function consume(session, data) {
     // Assert there's no attempt to force connect
-    if (data.sessionId !== session.sessionId) {
+    if (data.sessionId !== session.id) {
         session.dataSend(ServerResponse.authFail(0x04));
         return;
     }
