@@ -2,7 +2,7 @@ const ClientRequest = invoke('AuthenticationServer/Network/Receive');
 
 const Opcodes = {
     table: (() => {
-        const table = utils.tupleAlloc(0xff, (_, packet) => {
+        const table = utils.tupleAlloc(0x128, (_, packet) => {
             utils.infoFail('AuthServer', 'unknown opcode 0x%s', utils.toHex(packet[0]));
         });
 

@@ -1,24 +1,14 @@
 const QualifiedUsers = {
+    // A method to keep track of authenticated users and their information
     table: utils.tuple(),
 
     insert(username, secret) {
-        if (QualifiedUsers.find(username, secret)) {
-            return;
-        }
-
-        QualifiedUsers.table.push({ username: username, secret: secret });
-
-        setTimeout(() => {
-            QualifiedUsers.remove(username);
-        }, 10000);
-    },
-
-    remove(username) {
-        QualifiedUsers.table = QualifiedUsers.table.filter((ob) => username !== ob.username);
+        this.table = this.table.filter((ob) => username !== ob.username);
+        this.table.push({ username: username, secret: secret, date: Date.now() });
     },
 
     find(username, secret) {
-        return QualifiedUsers.table.find((ob) => username === ob.username && secret === ob.secret);
+        return this.table.find((ob) => username === ob.username && secret === ob.secret);
     }
 };
 

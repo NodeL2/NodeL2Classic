@@ -8,7 +8,9 @@ const Opcodes = {
             utils.infoFail('GameServer', 'unknown opcode 0x%s', utils.toHex(packet[0]));
         });
 
+        table[0x00] = ClientRequest.disconnect;
         table[0x0e] = ClientRequest.protocolVersion;
+        table[0x13] = ClientRequest.enterCharCreation;
         table[0x2b] = ClientRequest.authUser;
 
         // Extended opcodes
