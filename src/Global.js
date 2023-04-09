@@ -56,6 +56,10 @@ global.utils = {
         return require('fs').readFileSync(filename, charset);
     },
 
+    isAlphaNumeric(string) {
+        return /^[A-Za-z0-9]*$/.test(string);
+    },
+
     killSocket(socket) {
         socket.resetAndDestroy();
     }

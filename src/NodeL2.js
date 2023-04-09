@@ -18,11 +18,11 @@ console.info('\n\
 
 // Startup procedure, init `DataCache`, then `AuthServer` and `GameServer`
 Database.init(() => {
-    new Server('AuthServer', options.default.AuthServer, (name, socket) => {
-        return new AuthSession(name, socket);
+    new Server('AuthServer', options.default.AuthServer, (socket) => {
+        return new AuthSession(socket);
     });
 
-    new Server('GameServer', options.default.GameServer, (name, socket) => {
-        return new GameSession(name, socket);
+    new Server('GameServer', options.default.GameServer, (socket) => {
+        return new GameSession(socket);
     });
 });

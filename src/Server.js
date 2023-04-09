@@ -14,7 +14,7 @@ class Server {
         );
 
         // Generates a new `Session` for the respective `Server`. Either `AuthSession` or `GameSession`
-        const session = this.callback(this.name, socket);
+        const session = this.callback(socket);
         socket.on( 'data', session.dataReceive.bind(session));
         socket.on('error', session.error.bind(session));
     }

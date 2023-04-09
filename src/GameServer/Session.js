@@ -2,12 +2,13 @@ const Opcodes = invoke('GameServer/Network/Opcodes');
 const XOR     = invoke('Cipher/XOR');
 
 class Session {
-    constructor(name, socket) {
-        const optn = options.default.GameServer;
-
-        this.name   = name;
+    constructor(socket) {
         this.socket = socket;
         this.xor    = XOR.init();
+    }
+
+    setAccountId(username) {
+        this.accountId = username;
     }
 
     dataSend(data) {
@@ -25,7 +26,7 @@ class Session {
     }
 
     error() {
-        utils.infoWarn(this.name, 'exception');
+        utils.infoWarn('GameServer', 'exception');
     }
 }
 

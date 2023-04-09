@@ -3,10 +3,9 @@ const Opcodes        = invoke('AuthenticationServer/Network/Opcodes');
 const QualifiedUsers = invoke('AuthenticationServer/QualifiedUsers');
 
 class Session {
-    constructor(name, socket) {
+    constructor(socket) {
         const optn = options.default.AuthServer;
 
-        this.name     = name;
         this.socket   = socket;
         this.id       = utils.randomNumber(0x80000000);
         this.secret   = utils.randomNumber(0x80000000);
@@ -42,7 +41,7 @@ class Session {
     }
 
     error() {
-        utils.infoWarn(this.name, 'exception');
+        utils.infoWarn('AuthServer', 'exception');
     }
 }
 

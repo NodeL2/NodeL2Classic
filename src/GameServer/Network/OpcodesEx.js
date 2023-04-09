@@ -7,6 +7,7 @@ const OpcodesEx = {
             utils.infoFail('GameServer', 'unknown extended opcode 0x%s', utils.toHex(packet.readUInt16LE()));
         });
 
+        table[0x033] = ClientRequestEx.backToHall;
         table[0x0a9] = ClientRequestEx.charNameCreatable;
 
         return table;
