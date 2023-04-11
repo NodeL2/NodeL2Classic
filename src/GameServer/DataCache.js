@@ -6,6 +6,7 @@ const DataCache = {
 
         DataCache.classTemplates = validateModel(path + 'Templates/templates');
         DataCache.templateSpawns = validateModel(path + 'Templates/Spawns/spawns');
+        DataCache.templateItems  = validateModel(path + 'Templates/Items/items');
 
         utils.infoSuccess('Datapack', 'cached');
     },
@@ -20,6 +21,11 @@ const DataCache = {
     fetchTemplateSpawnsFromClassId(classId, callback) {
         const item = structuredClone(DataCache.templateSpawns.find((ob) => classId === ob.classId));
         item ? callback(item) : utils.infoWarn('Datapack', 'unknown Template Spawns ClassId %d', classId);
+    },
+
+    fetchTemplateItemsFromClassId(classId, callback) {
+        const item = structuredClone(DataCache.templateItems.find((ob) => classId === ob.classId));
+        item ? callback(item) : utils.infoWarn('Datapack', 'unknown Template Items ClassId %d', classId);
     }
 };
 

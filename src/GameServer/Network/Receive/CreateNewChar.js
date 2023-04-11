@@ -32,6 +32,14 @@ function createNewChar(session, buffer) {
     });
 }
 
+function awardBaseGear(id, classId) {
+    DataCache.fetchTemplateItemsFromClassId(classId, (templateItems) => {
+        templateItems?.items.forEach((item) => {
+            console.info(item.selfId);
+        });
+    });
+}
+
 function consume(session, data) {
     DataCache.fetchTemplateFromClassId(data.classId, (template) => {
         DataCache.fetchTemplateSpawnsFromClassId(data.classId, (templateSpawns) => {
@@ -42,10 +50,13 @@ function consume(session, data) {
                 ...template.vitals, ...data, ...coords
             };
 
-            Database.createCharacter(session.accountId, template).then(() => {
+            Database.createCharacter(session.accountId, template).then((packet) => {
                 session.dataSend(
                     ServerResponse.charCreateSuccess()
                 );
+
+                const charId = Number(packet.insertId);
+                awardBaseGear(charId, data.classId);
             });
         });
     });
