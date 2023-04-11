@@ -27,7 +27,11 @@ const Database = {
 
     createAccount      : invoke(path.databaseAuth + 'CreateAccount'),
     fetchUserPassword  : invoke(path.databaseAuth + 'FetchUserPassword'),
-    fetchAllCharacters : invoke(path.databaseAuth + 'FetchAllCharacters')
+    fetchAllCharacters : invoke(path.databaseAuth + 'FetchAllCharacters'),
+
+    // Game Server
+
+    createCharacter    : invoke(path.databaseGame + 'CreateCharacter')
 };
 
 module.exports = Database;

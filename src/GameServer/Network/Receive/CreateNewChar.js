@@ -1,4 +1,7 @@
-const PacketReceive = invoke('Packet/Receive');
+const ServerResponse = invoke('GameServer/Network/Send');
+const DataCache      = invoke('GameServer/DataCache');
+const PacketReceive  = invoke('Packet/Receive');
+const Database       = invoke('Database');
 
 function createNewChar(session, buffer) {
     const packet = new PacketReceive(buffer);
@@ -8,12 +11,12 @@ function createNewChar(session, buffer) {
         .readD()  // Race
         .readD()  // Sex
         .readD()  // Class ID
-        .readD()  // Int (constant 0?)
-        .readD()  // Str (constant 0?)
-        .readD()  // Con (constant 0?)
-        .readD()  // Men (constant 0?)
-        .readD()  // Dex (constant 0?)
-        .readD()  // Wit (constant 0?)
+        .readD()  // Int?
+        .readD()  // Str?
+        .readD()  // Con?
+        .readD()  // Men?
+        .readD()  // Dex?
+        .readD()  // Wit?
         .readD()  // Hair
         .readD()  // Hair Color
         .readD(); // Face
@@ -30,7 +33,22 @@ function createNewChar(session, buffer) {
 }
 
 function consume(session, data) {
-    console.info(data);
+    DataCache.fetchTemplateFromClassId(data.classId, (template) => {
+        DataCache.fetchTemplateSpawnsFromClassId(data.classId, (templateSpawns) => {
+            const spawns = templateSpawns?.spawns;
+            const coords = spawns[utils.randomNumber(utils.size(spawns))];
+
+            template = {
+                ...template.vitals, ...data, ...coords
+            };
+
+            Database.createCharacter(session.accountId, template).then(() => {
+                session.dataSend(
+                    ServerResponse.charCreateSuccess()
+                );
+            });
+        });
+    });
 }
 
 module.exports = createNewChar;

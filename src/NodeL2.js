@@ -3,6 +3,7 @@ require('./Global');
 // User imports
 const AuthSession = invoke('AuthenticationServer/Session');
 const GameSession = invoke('GameServer/Session');
+const DataCache   = invoke('GameServer/DataCache');
 const Server      = invoke('Server');
 const Database    = invoke('Database');
 
@@ -18,6 +19,8 @@ console.info('\n\
 
 // Startup procedure, init `DataCache`, then `AuthServer` and `GameServer`
 Database.init(() => {
+    DataCache.init();
+
     new Server('AuthServer', options.default.AuthServer, (socket) => {
         return new AuthSession(socket);
     });

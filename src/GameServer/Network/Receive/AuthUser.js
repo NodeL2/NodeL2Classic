@@ -17,6 +17,8 @@ function authUser(session, buffer) {
 }
 
 function consume(session, data) {
+    session.setAccountId(data.username);
+
     if (QualifiedUsers.find(data.username, data.secret)) {
         session.dataSend(ServerResponse.authResult(-1, 0x00));
         session.dataSend(ServerResponse.charSelectInfo());
