@@ -11,9 +11,10 @@ class PacketSend {
         const data = Buffer.alloc(size);
 
         switch (size) {
-            case 1: data.writeUInt8  (value); break;
-            case 2: data.writeInt16LE(value); break;
-            case 4: data.writeInt32LE(value); break;
+            case 1: data.writeUInt8   (value); break;
+            case 2: data.writeInt16LE (value); break;
+            case 4: data.writeInt32LE (value); break;
+            case 8: data.writeDoubleLE(value); break;
         }
 
         this.append(data);
@@ -34,10 +35,20 @@ class PacketSend {
         return this.write(value, 4);
     }
 
+    writeF(value) {
+        return this.write(value, 8.0);
+    }
+
     // Special
 
     writeB(buffer) {
         this.append(Buffer.from(buffer));
+        return this;
+    }
+
+    writeS(text) {
+        this.append(Buffer.from(text, 'ucs2'));
+        this.append(Buffer.alloc(2));
         return this;
     }
 
