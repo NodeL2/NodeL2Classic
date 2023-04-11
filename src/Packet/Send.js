@@ -35,6 +35,10 @@ class PacketSend {
         return this.write(value, 4);
     }
 
+    writeQ(value) {
+        return this.write(value, 4).write(0, 4);
+    }
+
     writeF(value) {
         return this.write(value, 8);
     }

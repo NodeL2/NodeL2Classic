@@ -19,10 +19,8 @@ function charSelected(actor) {
         .writeD(actor.fetchLocZ())
         .writeF(actor.fetchHp())
         .writeF(actor.fetchMp())
-        .writeD(actor.fetchSp())
-        .writeD(0x00)  // TODO: This is a hack, needs `writeQ`
-        .writeD(actor.fetchExp())
-        .writeD(0x00)  // TODO: This is a hack, needs `writeQ`
+        .writeQ(actor.fetchSp())
+        .writeQ(actor.fetchExp())
         .writeD(actor.fetchLevel())
         .writeD(0x00) // Reputation
         .writeD(actor.fetchPk())

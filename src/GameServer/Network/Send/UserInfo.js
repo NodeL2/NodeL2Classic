@@ -53,10 +53,8 @@ function userInfo(actor, masks) {
             .writeD(actor.fetchHp())
             .writeD(actor.fetchMp())
             .writeD(0x00)  // ?
-            .writeD(actor.fetchSp())
-            .writeD(0x00)  // TODO: This is a hack, needs `writeQ`
-            .writeD(actor.fetchExp())
-            .writeD(0x00)  // TODO: This is a hack, needs `writeQ`
+            .writeQ(actor.fetchSp())
+            .writeQ(actor.fetchExp())
             .writeF(0.0);  // Exp %
     }
 
