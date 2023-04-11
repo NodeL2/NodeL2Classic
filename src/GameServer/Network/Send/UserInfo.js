@@ -79,8 +79,8 @@ function userInfo(actor, masks) {
     if (masks.contains(masks.component.M_STATUS)) {
         packet
             .writeH(6)
-            .writeC(0x00)  // Mount Type
-            .writeC(0x00)  // Private Store Type
+            .writeC(0x00)  // Mount
+            .writeC(0x00)  // Private Store
             .writeC(actor.fetchCrafter())
             .writeC(0x00); // ?
     }
@@ -88,7 +88,7 @@ function userInfo(actor, masks) {
     if (masks.contains(masks.component.M_STATS)) {
         packet
             .writeH(56)
-            .writeH(0x00) // ?
+            .writeH(0x00)  // ?
             .writeD(actor.fetchPAtk())
             .writeD(actor.fetchAtkSpd())
             .writeD(actor.fetchPDef())
@@ -141,7 +141,7 @@ function userInfo(actor, masks) {
         packet
             .writeH(18)
             .writeF(1.0)  // Movement Multiplier
-            .writeF(1.0); // Attack Speed Multiplier
+            .writeF(1.0); // Atk. Speed Multiplier
     }
 
     if (masks.contains(masks.component.M_RADIUS_HEIGHT)) {
@@ -154,7 +154,7 @@ function userInfo(actor, masks) {
     if (masks.contains(masks.component.M_ATK_ELEMENTAL)) {
         packet
             .writeH(5)
-            .writeC(0x00)  // Atk. Element ID
+            .writeC(0x00)  // Atk. Element Id
             .writeH(0x00); // Atk. Element Value
     }
 
@@ -162,25 +162,25 @@ function userInfo(actor, masks) {
         packet
             .writeH(32 + utils.textSize(actor.fetchTitle()))
             .writeT(actor.fetchTitle())
-            .writeH(0x00)  // Pledge Type
-            .writeD(0x00)  // Clan ID
-            .writeD(0x00)  // Large Clan Crest ID
-            .writeD(0x00)  // Clan Crest ID
-            .writeD(0x00)  // Clan?
+            .writeH(0x00)  // ?
+            .writeD(0x00)  // Clan Id
+            .writeD(0x00)  // ?
+            .writeD(0x00)  // Clan Crest Id
+            .writeD(0x00)  // ?
             .writeC(0x00)  // Clan Leader
-            .writeD(0x00)  // Ally ID
-            .writeD(0x00)  // Ally Crest ID
-            .writeC(0x00); // Party Room?
+            .writeD(0x00)  // ?
+            .writeD(0x00)  // ?
+            .writeC(0x00); // ?
     }
 
     if (masks.contains(masks.component.M_SOCIAL)) {
         packet
             .writeH(22)
-            .writeC(0x00) // PVP Flag
+            .writeC(0x00) // PvP
             .writeD(0x00) // Reputation
             .writeC(0x00) // Noble
             .writeC(0x00) // Hero
-            .writeC(0x00) // Pledge Class
+            .writeC(0x00) // ?
             .writeD(actor.fetchPk())
             .writeD(actor.fetchPvp())
             .writeH(actor.fetchRecRemain())
@@ -192,16 +192,16 @@ function userInfo(actor, masks) {
             .writeH(15)
             .writeD(0x00)
             .writeC(0x00)
-            .writeD(0x00) // Fame ?
+            .writeD(0x00)  // ?
             .writeD(0x00);
     }
 
     if (masks.contains(masks.component.M_SLOTS)) {
         packet
             .writeH(9)
-            .writeC(0x00)  // Talismans?
-            .writeC(0x00)  // Jewels Limit?
-            .writeC(0x00)  // Team Ordinal?
+            .writeC(0x00)  // ?
+            .writeC(0x00)  // ?
+            .writeC(0x00)  // ?
             .writeC(0x00)  // ?
             .writeC(0x00)  // ?
             .writeC(0x00)  // ?
@@ -211,8 +211,8 @@ function userInfo(actor, masks) {
     if (masks.contains(masks.component.M_MOVEMENTS)) {
         packet
             .writeH(4)
-            .writeC(0x00)  // Move Type
-            .writeC(0x01); // Running
+            .writeC(0x00)  // Sit/Stand
+            .writeC(0x01); // Walk/Run
     }
 
     if (masks.contains(masks.component.M_COLOR)) {
@@ -227,7 +227,7 @@ function userInfo(actor, masks) {
             .writeH(9)
             .writeH(0x00)  // ?
             .writeH(0x00)  // ?
-            .writeH(0x00)  // Inventory Limit
+            .writeH(0x00)  // Backpack limit
             .writeC(0x00); // ?
     }
 

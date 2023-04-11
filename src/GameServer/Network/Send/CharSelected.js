@@ -8,7 +8,7 @@ function charSelected(actor) {
         .writeD(actor.fetchId())
         .writeS(actor.fetchTitle())
         .writeD(0x55555555)
-        .writeD(0x00)  // Clan ID
+        .writeD(0x00)  // Clan Id
         .writeD(0x00)  // ?
         .writeD(actor.fetchSex())
         .writeD(actor.fetchRace())

@@ -67,16 +67,16 @@ function charSelectInfo(characters) {
             .writeD(0x00)  // Time before deletion
             .writeD(character.classId)
             .writeD(0x00)  // ?
-            .writeC(0x00)  // Enchanted effect?
+            .writeC(0x00)  // ?
             .writeD(0x00)  // ?
             .writeD(0x00)  // ?
             .writeD(0x00)  // Pet Id
-            .writeD(0x00)  // Pet level
-            .writeD(0x00)  // Pet food
-            .writeD(0x00)  // Pet food level
-            .writeD(0x00)  // Current pet hp
+            .writeD(0x00)  // Pet Level
+            .writeD(0x00)  // Pet Food
+            .writeD(0x00)  // Pet Food Level
+            .writeD(0x00)  // Current Pet HP
             .writeD(0x00)  // TODO: This is a hack, needs `writeQ`
-            .writeD(0x00)  // Current pet mp
+            .writeD(0x00)  // Current Pet MP
             .writeD(0x00)  // TODO: This is a hack, needs `writeQ`
             .writeD(0x00)  // ?
             .writeD(0x00)  // ?

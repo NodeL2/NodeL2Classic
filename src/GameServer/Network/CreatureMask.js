@@ -1,5 +1,8 @@
 class CreatureMask {
     constructor(selection = []) {
+        this.masks = utils.tupleAlloc(3, 0x00);
+        this.size  = 5;
+
         this.component = {
             M_RELATION        : { data: 0x00, size:  4 },
             M_BASIC_INFO      : { data: 0x01, size: 16 },
@@ -29,9 +32,6 @@ class CreatureMask {
         this.block = [
             0x80, 0x40, 0x20, 0x10, 0x08, 0x04, 0x02, 0x01
         ];
-
-        this.masks = utils.tupleAlloc(3, 0x00);
-        this.size  = 5;
 
         if (!utils.size(selection)) {
             for (let component in this.component) {
