@@ -6,5 +6,6 @@ module.exports = {
         charTemplates: require('./CharTemplates'),
            cipherInit: require('./CipherInit'),
     disconnectSuccess: require('./DisconnectSuccess'),
+       moveToLocation: require('./MoveToLocation'),
              userInfo: require('./UserInfo')
 };
