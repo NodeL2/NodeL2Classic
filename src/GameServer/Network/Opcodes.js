@@ -12,6 +12,8 @@ const Opcodes = {
         table[0x0c] = ClientRequest.createNewChar;
         table[0x0d] = ClientRequest.charDelete;
         table[0x0e] = ClientRequest.protocolVersion;
+        table[0x11] = ClientRequest.enterWorld;
+        table[0x12] = ClientRequest.charSelected;
         table[0x13] = ClientRequest.enterCharCreation;
         table[0x2b] = ClientRequest.authUser;
 

@@ -32,6 +32,10 @@ global.utils = {
         return array.length;
     },
 
+    textSize: (string) => {
+        return Buffer.byteLength(string, 'ucs2');
+    },
+
     tuple() {
         return new Array()
     },
@@ -58,6 +62,10 @@ global.utils = {
 
     isAlphaNumeric(string) {
         return /^[A-Za-z0-9]*$/.test(string);
+    },
+
+    crushOb(ob) {
+        return require('objcrush')(ob);
     },
 
     killSocket(socket) {

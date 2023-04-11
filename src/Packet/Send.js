@@ -36,7 +36,7 @@ class PacketSend {
     }
 
     writeF(value) {
-        return this.write(value, 8.0);
+        return this.write(value, 8);
     }
 
     // Special
@@ -49,6 +49,12 @@ class PacketSend {
     writeS(text) {
         this.append(Buffer.from(text, 'ucs2'));
         this.append(Buffer.alloc(2));
+        return this;
+    }
+
+    writeT(text) {
+        this.write(utils.size(text), 2);
+        this.append(Buffer.from(text, 'ucs2'));
         return this;
     }
 

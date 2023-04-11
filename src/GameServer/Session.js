@@ -1,4 +1,5 @@
 const Opcodes = invoke('GameServer/Network/Opcodes');
+const Actor   = invoke('GameServer/Actor/Actor');
 const XOR     = invoke('Cipher/XOR');
 
 class Session {
@@ -9,6 +10,10 @@ class Session {
 
     setAccountId(username) {
         this.accountId = username;
+    }
+
+    setActor(data) {
+        this.actor = new Actor(this, data);
     }
 
     dataSend(data) {
