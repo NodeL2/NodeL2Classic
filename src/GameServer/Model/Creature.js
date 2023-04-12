@@ -6,6 +6,35 @@ class CreatureModel {
         this.state = new StateModel();
     }
 
+    // Set
+
+    setLocX(data) {
+        this.model.locX = data;
+    }
+
+    setLocY(data) {
+        this.model.locY = data;
+    }
+
+    setLocZ(data) {
+        this.model.locZ = data;
+    }
+
+    setHead(data) {
+        this.model.head = data;
+    }
+
+    setLocXYZ(coords) {
+        this.setLocX(coords.locX);
+        this.setLocY(coords.locY);
+        this.setLocZ(coords.locZ);
+    }
+
+    setLocXYZH(coords) {
+        this.setLocXYZ(coords);
+        this.setHead(coords.head);
+    }
+
     // Get
 
     fetchId() {
