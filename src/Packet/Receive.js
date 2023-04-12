@@ -1,7 +1,7 @@
 class PacketReceive {
     constructor(buffer) {
         this.buffer = buffer;
-        this.data   = new Array();
+        this.data   = utils.tuple();
 
         // Skip the Opcode Id
         this.offset = 1;
@@ -9,9 +9,9 @@ class PacketReceive {
 
     read(size) {
         switch (size) {
-            case 1: this.data.push(this.buffer.readUInt8   (this.offset)); break;
-            case 2: this.data.push(this.buffer.readUInt16LE(this.offset)); break;
-            case 4: this.data.push(this.buffer.readInt32LE (this.offset)); break;
+            case 1: this.data.push(this.buffer.readUInt8  (this.offset)); break;
+            case 2: this.data.push(this.buffer.readInt16LE(this.offset)); break;
+            case 4: this.data.push(this.buffer.readInt32LE(this.offset)); break;
         }
 
         this.offset += size;
