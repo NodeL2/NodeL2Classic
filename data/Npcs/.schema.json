@@ -1,0 +1,231 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "array",
+    "items": {
+        "type": "object",
+        "properties": {
+            "selfId": {
+                "type": "integer"
+            },
+            "template": {
+                "type": "object",
+                "properties": {
+                    "kind": {
+                        "type": "string"
+                    },
+                    "name": {
+                        "type": "string"
+                    },
+                    "title": {
+                        "type": "string"
+                    },
+                    "level": {
+                        "type": "integer"
+                    },
+                    "hostile": {
+                        "type": "boolean"
+                    }
+                },
+                "required": [
+                    "kind",
+                    "name",
+                    "title",
+                    "level",
+                    "hostile"
+                ]
+            },
+            "base": {
+                "type": "object",
+                "properties": {
+                    "str": {
+                        "type": "integer"
+                    },
+                    "dex": {
+                        "type": "integer"
+                    },
+                    "con": {
+                        "type": "integer"
+                    },
+                    "int": {
+                        "type": "integer"
+                    },
+                    "wit": {
+                        "type": "integer"
+                    },
+                    "men": {
+                        "type": "integer"
+                    }
+                },
+                "required": [
+                    "str",
+                    "dex",
+                    "con",
+                    "int",
+                    "wit",
+                    "men"
+                ]
+            },
+            "stats": {
+                "type": "object",
+                "properties": {
+                    "pAtk": {
+                        "type": "number"
+                    },
+                    "pAtkRnd": {
+                        "type": "integer"
+                    },
+                    "pDef": {
+                        "type": "number"
+                    },
+                    "mAtk": {
+                        "type": "number"
+                    },
+                    "mDef": {
+                        "type": "number"
+                    },
+                    "accur": {
+                        "type": "number"
+                    },
+                    "atkSpd": {
+                        "type": "integer"
+                    },
+                    "castSpd": {
+                        "type": "integer"
+                    },
+                    "atkRadius": {
+                        "type": "integer"
+                    }
+                },
+                "required": [
+                    "pAtk",
+                    "pAtkRnd",
+                    "pDef",
+                    "mAtk",
+                    "mDef",
+                    "accur",
+                    "atkSpd",
+                    "castSpd",
+                    "atkRadius"
+                ]
+            },
+            "speed": {
+                "type": "object",
+                "properties": {
+                    "walk": {
+                        "type": "integer"
+                    },
+                    "run": {
+                        "type": "integer"
+                    }
+                },
+                "required": [
+                    "walk",
+                    "run"
+                ]
+            },
+            "vitals": {
+                "type": "object",
+                "properties": {
+                    "maxHp": {
+                        "type": "number"
+                    },
+                    "maxMp": {
+                        "type": "number"
+                    },
+                    "revHp": {
+                        "type": "number"
+                    },
+                    "revMp": {
+                        "type": "number"
+                    },
+                    "corpseTime": {
+                        "type": "integer"
+                    }
+                },
+                "required": [
+                    "maxHp",
+                    "maxMp",
+                    "revHp",
+                    "revMp",
+                    "corpseTime"
+                ]
+            },
+            "collision": {
+                "type": "object",
+                "properties": {
+                    "radius": {
+                        "type": "number"
+                    },
+                    "size": {
+                        "type": "number"
+                    }
+                },
+                "required": [
+                    "radius",
+                    "size"
+                ]
+            },
+            "equipment": {
+                "type": "object",
+                "properties": {
+                    "weapon": {
+                        "type": "integer"
+                    },
+                    "shield": {
+                        "type": "integer"
+                    },
+                    "reuseTime": {
+                        "type": "integer"
+                    }
+                },
+                "required": [
+                    "weapon",
+                    "shield",
+                    "reuseTime"
+                ]
+            },
+            "clan": {
+                "type": "object",
+                "properties": {
+                    "clanName": {
+                        "type": "string"
+                    },
+                    "helpRadius": {
+                        "type": "integer"
+                    }
+                },
+                "required": [
+                    "clanName",
+                    "helpRadius"
+                ]
+            },
+            "rewards": {
+                "type": "object",
+                "properties": {
+                    "exp": {
+                        "type": "number"
+                    },
+                    "sp": {
+                        "type": "integer"
+                    }
+                },
+                "required": [
+                    "exp",
+                    "sp"
+                ]
+            }
+        },
+        "required": [
+            "selfId",
+            "template",
+            "base",
+            "stats",
+            "speed",
+            "vitals",
+            "collision",
+            "equipment",
+            "clan",
+            "rewards"
+        ]
+    }
+}

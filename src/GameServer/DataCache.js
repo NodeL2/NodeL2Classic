@@ -7,6 +7,8 @@ const DataCache = {
         DataCache.classTemplates = validateModel(path + 'Templates/templates');
         DataCache.templateSpawns = validateModel(path + 'Templates/Spawns/spawns');
         DataCache.templateItems  = validateModel(path + 'Templates/Items/items');
+        DataCache.npcs           = validateModel(path + 'Npcs/npcs');
+        DataCache.npcSpawns      = validateModel(path + 'Npcs/Spawns/spawns');
         DataCache.skillTree      = validateModel(path + 'Skills/Tree/tree');
 
         DataCache.skills = [
@@ -34,6 +36,11 @@ const DataCache = {
     fetchTemplateSpawnsFromClassId(classId, callback) {
         const item = structuredClone(DataCache.templateSpawns.find((ob) => ob.classId === classId));
         item ? callback(item) : utils.infoWarn('Datapack', 'unknown Template Spawns ClassId %d', classId);
+    },
+
+    fetchNpcFromSelfId(selfId, callback) {
+        const item = structuredClone(DataCache.npcs.find((ob) => ob.selfId === selfId));
+        item ? callback(item) : utils.infoWarn('Datapack', 'unknown Npc SelfId %d', selfId);
     },
 
     fetchTemplateItemsFromClassId(classId, callback) {
