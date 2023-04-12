@@ -25,7 +25,13 @@ class Session {
 
     dataReceive(data) {
         // Weird, sometimes the packet is sent twofold/duplicated. I had to limit it based on the header size...
-        const packet = data.slice(2, data.readInt16LE());
+        const packetSize = data.readInt16LE();
+
+        if (utils.size(data) !== packetSize) {
+            this.dataReceive(data.slice(packetSize));
+        }
+
+        const packet = data.slice(2, packetSize);
         const decipheredPacket = XOR.decipher(this.xor, packet);
         Opcodes.table[decipheredPacket[0]](this, decipheredPacket);
     }
