@@ -18,8 +18,11 @@ const Opcodes = {
         table[0x13] = ClientRequest.enterCharCreation;
         table[0x14] = ClientRequest.itemsList;
         table[0x2b] = ClientRequest.authUser;
+        table[0x50] = ClientRequest.skillsList;
         table[0x57] = ClientRequest.restart;
         table[0x59] = ClientRequest.validatePosition;
+        table[0x6c] = ClientRequest.showMap;
+        table[0xa6] = () => {}; // Skill Cool Time
 
         // Extended opcodes
         table[0xd0] = (session, packet) => {

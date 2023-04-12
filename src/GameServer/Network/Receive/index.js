@@ -10,5 +10,7 @@ module.exports = {
        moveToLocation: require('./MoveToLocation'),
       protocolVersion: require('./ProtocolVersion'),
               restart: require('./Restart'),
+              showMap: require('./ShowMap'),
+           skillsList: require('./SkillsList'),
      validatePosition: require('./ValidatePosition')
 };

@@ -9,6 +9,8 @@ module.exports = {
             itemsList: require('./ItemsList'),
        moveToLocation: require('./MoveToLocation'),
               restart: require('./Restart'),
+              showMap: require('./ShowMap'),
+           skillsList: require('./SkillsList'),
               sunrise: require('./Sunrise'),
              userInfo: require('./UserInfo')
 };

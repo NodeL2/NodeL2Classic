@@ -7,11 +7,14 @@ const OpcodesEx = {
             utils.infoFail('GameServer', 'unknown extended opcode 0x%s', utils.toHex(packet.readUInt16LE()));
         });
 
-        table[0x001] = () => {}; // Manor list
+        table[0x001] = () => {}; // Manor List
         table[0x021] = () => {}; // Button Map
+        table[0x02a] = () => {}; // Cursed Weapon List
+        table[0x02b] = () => {}; // Cursed Weapon Location
         table[0x033] = ClientRequestEx.backToHall;
-        table[0x03a] = () => {}; // Fortress info
-        table[0x060] = () => {}; // Request seed phase
+        table[0x03a] = () => {}; // Fortress Info
+        table[0x03c] = () => {}; // Fortress Attack Info
+        table[0x060] = () => {}; // Request Seed Phase
         table[0x0a9] = ClientRequestEx.charNameCreatable;
         table[0x0d1] = () => {}; // ?
 

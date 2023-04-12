@@ -1,4 +1,5 @@
 const ActorModel = invoke('GameServer/Model/Actor');
+const Skillset   = invoke('GameServer/Actor/Skillset');
 const Backpack   = invoke('GameServer/Actor/Backpack');
 
 class Actor extends ActorModel {
@@ -7,6 +8,7 @@ class Actor extends ActorModel {
         super(data);
 
         // Local
+        this.skillset = new Skillset();
         this.backpack = new Backpack();
         this.session  = session;
     }
