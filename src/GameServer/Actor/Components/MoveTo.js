@@ -1,9 +1,11 @@
-const ServerResponse = invoke('GameServer/Network/Send');
-
 function moveTo(session, actor, coords) {
-    session.dataSend(
-        ServerResponse.moveToLocation(actor.fetchId(), coords)
-    );
+    if (actor.state.inMotion()) {
+        actor.automation.abortAll(actor);
+    }
+
+    actor.automation.scheduleMovement(session, actor, coords.to, () => {
+        console.info('Arrived ' + Math.random());
+    });
 }
 
 module.exports = moveTo;

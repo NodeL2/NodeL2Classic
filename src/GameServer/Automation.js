@@ -5,7 +5,7 @@ const SpeckMath      = invoke('GameServer/SpeckMath');
 class Automation {
     constructor() {
         this.timer = { // TODO: Move this into actual GameServer timer
-            pickup: Timer.init()
+            movement: Timer.init(), interval: undefined
         };
 
         this.ticksPerSecond = 10;
@@ -21,7 +21,7 @@ class Automation {
         return (1000 / this.ticksPerSecond) * duration;
     }
 
-    schedulePickup(session, src, dst, callback) {
+    scheduleMovement(session, src, dst, callback) {
         const from = {
             locX: src.fetchLocX(),
             locY: src.fetchLocY(),
@@ -29,22 +29,31 @@ class Automation {
         };
 
         const to = {
-            locX: dst.fetchLocX(),
-            locY: dst.fetchLocY(),
-            locZ: dst.fetchLocZ(),
+            locX: dst.locX,
+            locY: dst.locY,
+            locZ: dst.locZ,
         };
+
+        const start = new SpeckMath.Point3D(from.locX, from.locY, from.locZ);
+        const end   = new SpeckMath.Point3D(to.locX, to.locY, to.locZ);
 
         // Execute each time, or else creature is stuck
         session.dataSend(ServerResponse.moveToLocation(src.fetchId(), { from: from, to: to }), src);
 
         // Calculate duration
-        src.state.setTowards('pickup');
+        src.state.setTowards('movement');
         const ticks = this.ticksToMove(
             from.locX, from.locY, from.locZ, to.locX, to.locY, to.locZ, 0, src.fetchRunSpd()
         );
 
+        clearInterval(this.timer.interval);
+        this.timer.interval = setInterval(() => {
+            src.setLocXYZ(start.midPoint(end, this.fetchDistanceRatio() * 1.0).toCoords());
+        }, 100);
+
         // Arrived
-        Timer.start(this.timer.pickup, () => {
+        Timer.start(this.timer.movement, () => {
+            clearInterval(this.timer.interval);
             src.state.setTowards(false);
             callback();
 
@@ -52,15 +61,16 @@ class Automation {
     }
 
     fetchDistanceRatio() {
-        if (Timer.exists(this.timer.pickup)) {
-            return Timer.completeness(this.timer.pickup);
+        if (Timer.exists(this.timer.movement)) {
+            return Timer.completeness(this.timer.movement);
         }
         return false;
     }
 
     abortAll(creature) {
         creature.state.setTowards(false);
-        Timer.clear(this.timer.pickup);
+        clearInterval(this.timer.interval);
+        Timer.clear(this.timer.movement);
     }
 }
 
