@@ -1,8 +1,9 @@
 const ServerResponse = invoke('GameServer/Network/Send');
-const CreatureMask   = invoke('GameServer/Network/CreatureMask');
+const UserMask       = invoke('GameServer/Network/UserMask');
 
 function enterWorld(session, buffer) {
-    session.dataSend(ServerResponse.userInfo(session.actor, new CreatureMask()));
+    session.dataSend(ServerResponse.sunrise()); // TODO: Server timer
+    session.dataSend(ServerResponse.userInfo(session.actor, new UserMask()));
 }
 
 module.exports = enterWorld;

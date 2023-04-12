@@ -1,4 +1,4 @@
-class CreatureMask {
+class UserMask {
     constructor(selection = []) {
         this.masks = utils.tupleAlloc(3, 0x00);
         this.size  = 5;
@@ -33,16 +33,9 @@ class CreatureMask {
             0x80, 0x40, 0x20, 0x10, 0x08, 0x04, 0x02, 0x01
         ];
 
-        if (!utils.size(selection)) {
-            for (let component in this.component) {
-                selection.push(component);
-            }
-        }
-
-        selection.forEach((item) => {
-            this.addSize(this.component[item]);
-            this.addMask(this.component[item]);
-        });
+        // Reset contents, and parse components
+        this.reset(selection);
+        this.parse(selection)
     }
 
     // Set
@@ -67,9 +60,24 @@ class CreatureMask {
 
     // Abstract
 
+    reset(selection) {
+        if (!utils.size(selection)) {
+            for (let component in this.component) {
+                selection.push(component);
+            }
+        }
+    }
+
+    parse(selection) {
+        selection.forEach((item) => {
+            this.addSize(this.component[item]);
+            this.addMask(this.component[item]);
+        });
+    }
+
     contains(mask) {
         return this.masks[mask.data >> 3] & this.block[mask.data & 0x7];
     }
 }
 
-module.exports = CreatureMask;
+module.exports = UserMask;
