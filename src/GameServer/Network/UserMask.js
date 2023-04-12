@@ -40,7 +40,17 @@ class UserMask {
 
     // Set
 
-    addSize(mask) {
+    addSize(mask, component) {
+        switch (component) {
+            case 'M_BASIC_INFO':
+                this.size += utils.textSize('Datdeed');
+                break;
+
+            case 'M_CLAN':
+                this.size += utils.textSize('');
+                break;
+        }
+
         this.size += mask.size;
     }
 
@@ -70,7 +80,7 @@ class UserMask {
 
     parse(selection) {
         selection.forEach((item) => {
-            this.addSize(this.component[item]);
+            this.addSize(this.component[item], item);
             this.addMask(this.component[item]);
         });
     }
