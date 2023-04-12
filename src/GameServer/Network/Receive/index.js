@@ -6,6 +6,7 @@ module.exports = {
            disconnect: require('./Disconnect'),
     enterCharCreation: require('./EnterCharCreation'),
            enterWorld: require('./EnterWorld'),
+            itemsList: require('./ItemsList'),
        moveToLocation: require('./MoveToLocation'),
       protocolVersion: require('./ProtocolVersion'),
               restart: require('./Restart'),

@@ -1,4 +1,5 @@
 const ActorModel = invoke('GameServer/Model/Actor');
+const Backpack   = invoke('GameServer/Actor/Backpack');
 
 class Actor extends ActorModel {
     constructor(session, data) {
@@ -6,7 +7,8 @@ class Actor extends ActorModel {
         super(data);
 
         // Local
-        this.session = session;
+        this.backpack = new Backpack();
+        this.session  = session;
     }
 
     destructor() {

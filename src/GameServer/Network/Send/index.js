@@ -6,6 +6,7 @@ module.exports = {
         charTemplates: require('./CharTemplates'),
            cipherInit: require('./CipherInit'),
     disconnectSuccess: require('./DisconnectSuccess'),
+            itemsList: require('./ItemsList'),
        moveToLocation: require('./MoveToLocation'),
               restart: require('./Restart'),
               sunrise: require('./Sunrise'),

@@ -1,6 +1,9 @@
+const StateModel = invoke('GameServer/Model/State');
+
 class CreatureModel {
     constructor(data) {
         this.model = data;
+        this.state = new StateModel();
     }
 
     // Get
