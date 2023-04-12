@@ -65,12 +65,11 @@ class PacketSend {
     // End
 
     fetchBuffer(checksum = true) {
-        const size  = utils.size(this.buffer);
-        const pad   = Buffer.alloc((Math.ceil(size / 4) * 4) - size);
-        this.buffer = Buffer.concat([this.buffer, pad]);
+        const size = utils.size(this.buffer);
+        this.append(Buffer.alloc((Math.ceil(size / 4) * 4) - size));
 
         if (checksum) {
-            this.append(Buffer.alloc(4 + (utils.size(this.buffer) + 4) % 8));
+            this.append(Buffer.alloc(8 - (utils.size(this.buffer) % 8)));
         }
         return this.buffer;
     }
