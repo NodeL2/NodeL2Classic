@@ -5,8 +5,8 @@ const SpeckMath      = invoke('GameServer/SpeckMath');
 class Automation {
     constructor() {
         this.timer = { // TODO: Move this into actual GameServer timer
-            once   : Chronos.Schedule.init(),
-            repeat : Chronos.Multiple.init(),
+            once   : new Chronos.Schedule(),
+            repeat : new Chronos.Multiple(),
         };
 
         this.ticksPerSecond = 10;
@@ -46,30 +46,30 @@ class Automation {
         );
 
         // Arrived
-        Chronos.Schedule.start(this.timer.once, () => {
+        this.timer.once.start(() => {
             this.abortAll(src);
             callback();
 
         }, ticks);
 
         // Report
-        Chronos.Multiple.start(this.timer.repeat, () => {
+        this.timer.repeat.start(() => {
             src.setLocXYZ(new SpeckMath.Point3D(from.locX, from.locY, from.locZ).midPoint(new SpeckMath.Point3D(to.locX, to.locY, to.locZ), this.fetchDistanceRatio()).toCoords());
 
         }, 100);
     }
 
     fetchDistanceRatio() {
-        if (Chronos.Schedule.exists(this.timer.once)) {
-            return Chronos.Schedule.completeness(this.timer.once);
+        if (this.timer.once.exists()) {
+            return this.timer.once.completeness();
         }
         return false;
     }
 
     abortAll(creature) {
         creature.state.setTowards(false);
-        Chronos.Schedule.clear(this.timer.once);
-        Chronos.Multiple.clear(this.timer.repeat);
+        this.timer.once  .clear();
+        this.timer.repeat.clear();
     }
 }
 
