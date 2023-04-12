@@ -12,10 +12,20 @@ class Actor extends ActorModel {
         this.skillset   = new Skillset();
         this.backpack   = new Backpack();
         this.automation = new Automation();
+
         this.session    = session;
+        this.previousXY = undefined;
     }
 
     destructor() {
+    }
+
+    // Request packets
+
+    enterWorld() {
+        invoke(path.actor).enterWorld(
+            this.session, this
+        );
     }
 
     moveTo(data) {
