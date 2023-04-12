@@ -32,10 +32,26 @@ function createNewChar(session, buffer) {
     });
 }
 
+function awardBaseSkills(id, classId) {
+    DataCache.fetchSkillTreeFromClassId(classId, (skillTree) => {
+        const skills = skillTree.skills;
+        const level1 = skills?.filter((ob) => ob.levels.find((ob) => ob.pLevel === 1)) ?? [];
+
+        level1.forEach((skill) => {
+            skill.levels = skill.levels.filter((ob) => ob.pLevel === 1);
+            DataCache.fetchSkillFromSelfId(skill.selfId, (skillDetails) => {
+                skill = { ...utils.crushOb(skill), passive: skillDetails.template?.passive ?? false };
+                Database.setSkill(id, skill);
+            });
+        });
+    });
+}
+
 function awardBaseGear(id, classId) {
     DataCache.fetchTemplateItemsFromClassId(classId, (templateItems) => {
         templateItems?.items.forEach((item) => {
-            console.info(item.selfId);
+            item.slot = DataCache.items.find(ob => item.selfId === ob.selfId)?.etc?.slot ?? 0;
+            Database.setItem(id, item);
         });
     });
 }
@@ -56,7 +72,8 @@ function consume(session, data) {
                 );
 
                 const charId = Number(packet.insertId);
-                awardBaseGear(charId, data.classId);
+                awardBaseSkills(charId, data.classId);
+                awardBaseGear  (charId, data.classId);
             });
         });
     });

@@ -9,6 +9,9 @@ class Actor extends ActorModel {
         this.session = session;
     }
 
+    destructor() {
+    }
+
     moveTo(data) {
         invoke(path.actor).moveTo(
             this.session, this, data

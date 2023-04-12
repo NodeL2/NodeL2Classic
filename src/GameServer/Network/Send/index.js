@@ -7,6 +7,7 @@ module.exports = {
            cipherInit: require('./CipherInit'),
     disconnectSuccess: require('./DisconnectSuccess'),
        moveToLocation: require('./MoveToLocation'),
+              restart: require('./Restart'),
               sunrise: require('./Sunrise'),
              userInfo: require('./UserInfo')
 };

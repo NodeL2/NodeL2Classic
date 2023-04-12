@@ -1,0 +1,111 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "array",
+    "items": {
+        "type": "object",
+        "properties": {
+            "selfId": {
+                "type": "integer"
+            },
+            "template": {
+                "type": "object",
+                "properties": {
+                    "kind": {
+                        "type": "string"
+                    },
+                    "name": {
+                        "type": "string"
+                    },
+                    "class1": {
+                        "type": "integer"
+                    },
+                    "class2": {
+                        "type": "integer"
+                    },
+                    "mass": {
+                        "type": "integer"
+                    },
+                    "price": {
+                        "type": "integer"
+                    }
+                },
+                "required": [
+                    "kind",
+                    "name",
+                    "class1",
+                    "class2",
+                    "mass",
+                    "price"
+                ]
+            },
+            "stats": {
+                "type": "object",
+                "properties": {
+                    "pAtk": {
+                        "type": "integer"
+                    },
+                    "pAtkRnd": {
+                        "type": "integer"
+                    },
+                    "mAtk": {
+                        "type": "integer"
+                    },
+                    "atkSpd": {
+                        "type": "integer"
+                    },
+                    "crit": {
+                        "type": "integer"
+                    },
+                    "accur": {
+                        "type": "number"
+                    }
+                },
+                "required": [
+                    "pAtk",
+                    "pAtkRnd",
+                    "mAtk",
+                    "atkSpd",
+                    "crit",
+                    "accur"
+                ]
+            },
+            "etc": {
+                "type": "object",
+                "properties": {
+                    "slot": {
+                        "type": "integer"
+                    },
+                    "mp": {
+                        "type": "integer"
+                    },
+                    "soulshot": {
+                        "type": "integer"
+                    },
+                    "spiritshot": {
+                        "type": "integer"
+                    },
+                    "rank": {
+                        "type": "string"
+                    },
+                    "cristals": {
+                        "type": "integer"
+                    }
+                },
+                "required": [
+                    "slot",
+                    "mp",
+                    "soulshot",
+                    "spiritshot",
+                    "rank",
+                    "cristals"
+                ]
+            }
+        },
+        "required": [
+            "selfId",
+            "template",
+            "stats",
+            "etc"
+        ]
+    }
+}

@@ -1,0 +1,63 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "array",
+    "items": {
+        "type": "object",
+        "properties": {
+            "selfId": {
+                "type": "integer"
+            },
+            "template": {
+                "type": "object",
+                "properties": {
+                    "kind": {
+                        "type": "string"
+                    },
+                    "name": {
+                        "type": "string"
+                    },
+                    "class1": {
+                        "type": "integer"
+                    },
+                    "class2": {
+                        "type": "integer"
+                    },
+                    "mass": {
+                        "type": "integer"
+                    },
+                    "price": {
+                        "type": "integer"
+                    }
+                },
+                "required": [
+                    "kind",
+                    "name",
+                    "class1",
+                    "class2",
+                    "mass",
+                    "price"
+                ]
+            },
+            "etc": {
+                "type": "object",
+                "properties": {
+                    "stackable": {
+                        "type": "boolean"
+                    },
+                    "consumable": {
+                        "type": "boolean"
+                    }
+                },
+                "required": [
+                    "stackable",
+                    "consumable"
+                ]
+            }
+        },
+        "required": [
+            "selfId",
+            "template",
+            "etc"
+        ]
+    }
+}

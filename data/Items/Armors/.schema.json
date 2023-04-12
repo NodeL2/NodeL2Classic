@@ -1,0 +1,91 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "array",
+    "items": {
+        "type": "object",
+        "properties": {
+            "selfId": {
+                "type": "integer"
+            },
+            "template": {
+                "type": "object",
+                "properties": {
+                    "kind": {
+                        "type": "string"
+                    },
+                    "name": {
+                        "type": "string"
+                    },
+                    "class1": {
+                        "type": "integer"
+                    },
+                    "class2": {
+                        "type": "integer"
+                    },
+                    "mass": {
+                        "type": "integer"
+                    },
+                    "price": {
+                        "type": "integer"
+                    }
+                },
+                "required": [
+                    "kind",
+                    "name",
+                    "class1",
+                    "class2",
+                    "mass",
+                    "price"
+                ]
+            },
+            "stats": {
+                "type": "object",
+                "properties": {
+                    "pDef": {
+                        "type": "integer"
+                    },
+                    "mDef": {
+                        "type": "integer"
+                    },
+                    "evasion": {
+                        "type": "integer"
+                    },
+                    "maxMp": {
+                        "type": "integer"
+                    }
+                },
+                "required": [
+                    "pDef",
+                    "mDef",
+                    "evasion",
+                    "maxMp"
+                ]
+            },
+            "etc": {
+                "type": "object",
+                "properties": {
+                    "slot": {
+                        "type": "integer"
+                    },
+                    "rank": {
+                        "type": "string"
+                    },
+                    "cristals": {
+                        "type": "integer"
+                    }
+                },
+                "required": [
+                    "slot",
+                    "rank",
+                    "cristals"
+                ]
+            }
+        },
+        "required": [
+            "selfId",
+            "template",
+            "stats",
+            "etc"
+        ]
+    }
+}
