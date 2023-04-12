@@ -1,11 +1,12 @@
 const ServerResponse = invoke('GameServer/Network/Send');
-const Timer          = invoke('GameServer/Timer');
+const Chronos        = invoke('GameServer/Chronos');
 const SpeckMath      = invoke('GameServer/SpeckMath');
 
 class Automation {
     constructor() {
         this.timer = { // TODO: Move this into actual GameServer timer
-            movement: Timer.init(), interval: undefined
+            once   : Chronos.Schedule.init(),
+            repeat : Chronos.Multiple.init(),
         };
 
         this.ticksPerSecond = 10;
@@ -22,6 +23,8 @@ class Automation {
     }
 
     scheduleMovement(session, src, dst, callback) {
+        src.state.setTowards('movement');
+
         const from = {
             locX: src.fetchLocX(),
             locY: src.fetchLocY(),
@@ -34,43 +37,39 @@ class Automation {
             locZ: dst.locZ,
         };
 
-        const start = new SpeckMath.Point3D(from.locX, from.locY, from.locZ);
-        const end   = new SpeckMath.Point3D(to.locX, to.locY, to.locZ);
-
         // Execute each time, or else creature is stuck
         session.dataSend(ServerResponse.moveToLocation(src.fetchId(), { from: from, to: to }), src);
 
         // Calculate duration
-        src.state.setTowards('movement');
         const ticks = this.ticksToMove(
             from.locX, from.locY, from.locZ, to.locX, to.locY, to.locZ, 0, src.fetchRunSpd()
         );
 
-        clearInterval(this.timer.interval);
-        this.timer.interval = setInterval(() => {
-            src.setLocXYZ(start.midPoint(end, this.fetchDistanceRatio() * 1.0).toCoords());
-        }, 100);
-
         // Arrived
-        Timer.start(this.timer.movement, () => {
-            clearInterval(this.timer.interval);
-            src.state.setTowards(false);
+        Chronos.Schedule.start(this.timer.once, () => {
+            this.abortAll(src);
             callback();
 
         }, ticks);
+
+        // Report
+        Chronos.Multiple.start(this.timer.repeat, () => {
+            src.setLocXYZ(new SpeckMath.Point3D(from.locX, from.locY, from.locZ).midPoint(new SpeckMath.Point3D(to.locX, to.locY, to.locZ), this.fetchDistanceRatio()).toCoords());
+
+        }, 100);
     }
 
     fetchDistanceRatio() {
-        if (Timer.exists(this.timer.movement)) {
-            return Timer.completeness(this.timer.movement);
+        if (Chronos.Schedule.exists(this.timer.once)) {
+            return Chronos.Schedule.completeness(this.timer.once);
         }
         return false;
     }
 
     abortAll(creature) {
         creature.state.setTowards(false);
-        clearInterval(this.timer.interval);
-        Timer.clear(this.timer.movement);
+        Chronos.Schedule.clear(this.timer.once);
+        Chronos.Multiple.clear(this.timer.repeat);
     }
 }
 

@@ -1,10 +1,10 @@
-const Timer = {
+const Schedule = {
     init() {
         return {};
     },
 
     start(handler, func, ms) {
-        if (Timer.exists(handler)) { Timer.clear(handler); }
+        if (this.exists(handler)) { this.clear(handler); }
         handler.timer = setTimeout(func, ms);
         handler.end   = handler.timer._idleTimeout / 1000;
     },
@@ -14,7 +14,7 @@ const Timer = {
     },
 
     completeness(handler) {
-        return Timer.elapsed(handler) / handler.end;
+        return this.elapsed(handler) / handler.end;
     },
 
     elapsed(handler) {
@@ -35,4 +35,27 @@ const Timer = {
     }
 };
 
-module.exports = Timer;
+const Multiple = {
+    init() {
+        return {};
+    },
+
+    start(handler, func, ms) {
+        if (this.exists(handler)) { this.clear(handler); }
+        handler.timer = setInterval(func, ms);
+    },
+
+    exists(handler) {
+        return handler?.timer ? true : false;
+    },
+
+    clear(handler) {
+        if (!(handler?.timer)) return;
+        clearInterval(handler.timer);
+        delete handler.timer;
+    }
+};
+
+module.exports = {
+    Schedule: Schedule, Multiple: Multiple
+};
