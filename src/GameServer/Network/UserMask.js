@@ -1,7 +1,7 @@
 class UserMask {
     constructor(selection = []) {
         this.masks = utils.tupleAlloc(3, 0x00);
-        this.size  = 5;
+        this.iSize = 5;
 
         this.component = {
             M_RELATION        : { data: 0x00, size:  4 },
@@ -43,15 +43,17 @@ class UserMask {
     addSize(mask, component) {
         switch (component) {
             case 'M_BASIC_INFO':
-                this.size += utils.textSize('Datdeed');
+                this.iSize += mask.size + utils.textSize('Unknown');
                 break;
 
             case 'M_CLAN':
-                this.size += utils.textSize('');
+                this.iSize += mask.size + utils.textSize('');
+                break;
+
+            default:
+                this.iSize += mask.size;
                 break;
         }
-
-        this.size += mask.size;
     }
 
     addMask(mask) {
@@ -65,7 +67,7 @@ class UserMask {
     }
 
     fetchSize() {
-        return this.size;
+        return this.iSize;
     }
 
     // Abstract

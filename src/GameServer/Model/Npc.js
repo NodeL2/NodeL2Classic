@@ -51,6 +51,16 @@ class NpcModel extends CreatureModel {
     fetchRewardSp() {
         return this.model.sp;
     }
+
+    // Abstract
+
+    fetchDispSelfId() {
+        return this.fetchSelfId() + 1000000 + 20000;
+    }
+
+    fetchAttackable() {
+        return ['Monster', 'Boss'].includes(this.model.kind);
+    }
 }
 
 module.exports = NpcModel;

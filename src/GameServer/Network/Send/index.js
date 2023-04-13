@@ -8,6 +8,7 @@ module.exports = {
     disconnectSuccess: require('./DisconnectSuccess'),
             itemsList: require('./ItemsList'),
        moveToLocation: require('./MoveToLocation'),
+              npcInfo: require('./NpcInfo'),
               restart: require('./Restart'),
               showMap: require('./ShowMap'),
            skillsList: require('./SkillsList'),
