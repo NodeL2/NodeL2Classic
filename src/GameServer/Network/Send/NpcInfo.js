@@ -157,12 +157,12 @@ function NpcInfo(npc, masks) {
 
     if (masks.contains(masks.component.M_NAME_NPC_ID)) {
         packet
-            .writeD(0x00);
+            .writeD(-1);
     }
 
     if (masks.contains(masks.component.M_TITLE_NPC_ID)) {
         packet
-            .writeD(0x00);
+            .writeD(-1);
     }
 
     if (masks.contains(masks.component.M_PVP_FLAG)) {

@@ -1,6 +1,7 @@
 class UserMask {
-    constructor(selection = []) {
+    constructor(selection, name) {
         this.masks = utils.tupleAlloc(3, 0x00);
+        this.name  = name;
         this.iSize = 5;
 
         this.component = {
@@ -43,7 +44,7 @@ class UserMask {
     addSize(mask, component) {
         switch (component) {
             case 'M_BASIC_INFO':
-                this.iSize += mask.size + utils.textSize('Unknown');
+                this.iSize += mask.size + utils.textSize(this.name);
                 break;
 
             case 'M_CLAN':
