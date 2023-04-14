@@ -28,6 +28,18 @@ class Actor extends ActorModel {
         );
     }
 
+    select(data) {
+        invoke(path.actor).select(
+            this.session, this, data
+        );
+    }
+
+    unselect() {
+        invoke(path.actor).unselect(
+            this.session, this
+        );
+    }
+
     moveTo(data) {
         invoke(path.actor).moveTo(
             this.session, this, data

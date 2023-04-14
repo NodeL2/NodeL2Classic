@@ -1,7 +1,11 @@
-const StateModel = invoke('GameServer/Model/State');
+const SelectedModel = invoke('GameServer/Model/Selected');
+const StateModel    = invoke('GameServer/Model/State');
 
-class CreatureModel {
+class CreatureModel extends SelectedModel {
     constructor(data) {
+        // Parent inheritance
+        super();
+
         this.model = data;
         this.state = new StateModel();
     }

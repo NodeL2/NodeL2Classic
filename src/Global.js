@@ -82,5 +82,6 @@ global.options = {
 global.path = {
     databaseAuth: 'AuthenticationServer/Database/',
     databaseGame: 'GameServer/Database/',
+           world: 'GameServer/World/Components/',
            actor: 'GameServer/Actor/Components/'
 };

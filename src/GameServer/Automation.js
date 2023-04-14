@@ -32,9 +32,9 @@ class Automation {
         };
 
         const to = {
-            locX: dst.locX,
-            locY: dst.locY,
-            locZ: dst.locZ,
+            locX: dst.locX ?? dst.fetchLocX(),
+            locY: dst.locY ?? dst.fetchLocY(),
+            locZ: dst.locZ ?? dst.fetchLocZ(),
         };
 
         // Execute each time, or else creature is stuck
