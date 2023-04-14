@@ -43,8 +43,8 @@ const DataCache = {
         item ? callback(item) : utils.infoWarn('Datapack', 'unknown Npc SelfId %d', selfId);
     },
 
-    fetchNpcFromOldSelfId(selfId, callback) { // TODO: Deprecated
-        const item = structuredClone(DataCache.npcs.find((ob) => ob.selfId !== -1 && ob.oldSelfId === selfId));
+    fetchNpcFromSelfIdMuted(selfId, callback) {
+        const item = structuredClone(DataCache.npcs.find((ob) => ob.selfId === selfId && ob.dispSelfId !== -1));
         item ? callback(item) : null;
     },
 

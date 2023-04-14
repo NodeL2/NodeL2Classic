@@ -7,6 +7,9 @@
             "selfId": {
                 "type": "integer"
             },
+            "dispSelfId": {
+                "type": "integer"
+            },
             "template": {
                 "type": "object",
                 "properties": {
@@ -217,6 +220,7 @@
         },
         "required": [
             "selfId",
+            "dispSelfId",
             "template",
             "base",
             "stats",

@@ -8,6 +8,10 @@ class NpcModel extends CreatureModel {
         return this.model.selfId;
     }
 
+    fetchDispSelfId() {
+        return this.model.dispSelfId + 1000000;
+    }
+
     fetchKind() {
         return this.model.kind;
     }
@@ -53,10 +57,6 @@ class NpcModel extends CreatureModel {
     }
 
     // Abstract
-
-    fetchDispSelfId() {
-        return this.fetchSelfId() + 1000000;
-    }
 
     fetchAttackable() {
         return ['Monster', 'Boss'].includes(this.model.kind);
