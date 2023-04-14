@@ -3,7 +3,7 @@ function moveTo(session, actor, coords) {
         actor.automation.abortAll(actor);
     }
 
-    actor.automation.scheduleMovement(session, actor, coords.to, () => {
+    actor.automation.scheduleMovement(session, 'movement', actor, coords.to, 0, () => {
         console.info('Arrived ' + Math.random());
     });
 }

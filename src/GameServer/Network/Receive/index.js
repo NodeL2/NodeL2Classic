@@ -1,5 +1,6 @@
 module.exports = {
                action: require('./Action'),
+          addShortcut: require('./AddShortcut'),
              authUser: require('./AuthUser'),
            charDelete: require('./CharDelete'),
          charSelected: require('./CharSelected'),

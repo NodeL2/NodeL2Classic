@@ -1,4 +1,6 @@
 module.exports = {
+         actionFailed: require('./ActionFailed'),
+          addShortcut: require('./AddShortcut'),
            authResult: require('./AuthResult'),
     charCreateSuccess: require('./CharCreateSuccess'),
          charSelected: require('./CharSelected'),
@@ -10,6 +12,7 @@ module.exports = {
     disconnectSuccess: require('./DisconnectSuccess'),
             itemsList: require('./ItemsList'),
        moveToLocation: require('./MoveToLocation'),
+           moveToPawn: require('./MoveToPawn'),
               npcInfo: require('./NpcInfo'),
               restart: require('./Restart'),
               showMap: require('./ShowMap'),

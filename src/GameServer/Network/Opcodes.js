@@ -19,6 +19,7 @@ const Opcodes = {
         table[0x14] = ClientRequest.itemsList;
         table[0x1f] = ClientRequest.action;
         table[0x2b] = ClientRequest.authUser;
+        table[0x3d] = ClientRequest.addShortcut;
         table[0x48] = ClientRequest.destUnselect;
         table[0x50] = ClientRequest.skillsList;
         table[0x57] = ClientRequest.restart;

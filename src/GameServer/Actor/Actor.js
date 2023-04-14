@@ -1,7 +1,8 @@
-const ActorModel = invoke('GameServer/Model/Actor');
-const Skillset   = invoke('GameServer/Actor/Skillset');
-const Backpack   = invoke('GameServer/Actor/Backpack');
-const Automation = invoke('GameServer/Automation');
+const ServerResponse = invoke('GameServer/Network/Send');
+const ActorModel     = invoke('GameServer/Model/Actor');
+const Skillset       = invoke('GameServer/Actor/Skillset');
+const Backpack       = invoke('GameServer/Actor/Backpack');
+const Automation     = invoke('GameServer/Automation');
 
 class Actor extends ActorModel {
     constructor(session, data) {
@@ -50,6 +51,16 @@ class Actor extends ActorModel {
         invoke(path.actor).updatePosition(
             this.session, this, data
         );
+    }
+
+    // Abstract
+
+    isBlocked() {
+        if (this.state.isBlocked()) {
+            this.session.dataSend(ServerResponse.actionFailed());
+            return true;
+        }
+        return false;
     }
 }
 

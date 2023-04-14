@@ -16,34 +16,39 @@ class Automation {
         this.abortAll(creature);
     }
 
-    ticksToMove(srcX, srcY, srcZ, dstX, dstY, dstZ, radius, speed) {
-        const distance = new SpeckMath.Point3D(srcX, srcY, srcZ).distance(new SpeckMath.Point3D(dstX, dstY, dstZ)) - radius;
+    ticksToMove(from, to, radius, speed) {
+        const distance = from.distance(to) - radius;
         const duration = 1 + ((this.ticksPerSecond * distance) / speed);
         return (1000 / this.ticksPerSecond) * duration;
     }
 
-    scheduleMovement(session, src, dst, callback) {
-        src.state.setTowards('movement');
+    scheduleMovement(session, kind, src, dst, radius, callback) {
+        const from = new SpeckMath.Point3D(
+            src.fetchLocX(),
+            src.fetchLocY(),
+            src.fetchLocZ(),
+        );
 
-        const from = {
-            locX: src.fetchLocX(),
-            locY: src.fetchLocY(),
-            locZ: src.fetchLocZ(),
-        };
+        const to = new SpeckMath.Point3D(
+            dst.locX ?? dst.fetchLocX(),
+            dst.locY ?? dst.fetchLocY(),
+            dst.locZ ?? dst.fetchLocZ(),
+        );
 
-        const to = {
-            locX: dst.locX ?? dst.fetchLocX(),
-            locY: dst.locY ?? dst.fetchLocY(),
-            locZ: dst.locZ ?? dst.fetchLocZ(),
-        };
-
-        // Execute each time, or else creature is stuck
-        session.dataSend(ServerResponse.moveToLocation(src.fetchId(), { from: from, to: to }), src);
+        if (['movement'].includes(kind)) {
+            session.dataSend(
+                ServerResponse.moveToLocation(src.fetchId(), { from: from.toCoords(), to: to.toCoords() })
+            );
+        }
+        else {
+            session.dataSend(
+                ServerResponse.moveToPawn(src, dst, radius)
+            );
+        }
 
         // Calculate duration
-        const ticks = this.ticksToMove(
-            from.locX, from.locY, from.locZ, to.locX, to.locY, to.locZ, 0, src.fetchRunSpd()
-        );
+        src.state.setTowards(kind);
+        const ticks = this.ticksToMove(from, to, radius, src.fetchRunSpd());
 
         // Arrived
         this.timer.once.start(() => {
@@ -54,7 +59,7 @@ class Automation {
 
         // Report
         this.timer.repeat.start(() => {
-            src.setLocXYZ(new SpeckMath.Point3D(from.locX, from.locY, from.locZ).midPoint(new SpeckMath.Point3D(to.locX, to.locY, to.locZ), this.fetchDistanceRatio()).toCoords());
+            src.setLocXYZ(from.midPoint(to, this.fetchDistanceRatio()).toCoords());
 
         }, 100);
     }
