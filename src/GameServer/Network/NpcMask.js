@@ -1,7 +1,8 @@
 class NpcMask {
-    constructor(selection, name) {
+    constructor(selection, name, title) {
         this.masks = utils.tupleAlloc(5, 0x00);
         this.name  = name;
+        this.title = title;
         this.iSize = 0;
         this.bSize = 0;
 
@@ -64,7 +65,7 @@ class NpcMask {
                 break;
 
             case 'M_TITLE':
-                this.iSize += mask.size + utils.textSize('');
+                this.iSize += mask.size + utils.textSize(this.title);
                 break;
 
             case 'M_NAME':
