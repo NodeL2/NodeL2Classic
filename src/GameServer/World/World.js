@@ -20,7 +20,7 @@ const World = {
             const bounds = item.bounds;
 
             item.spawns.forEach((spawn) => {
-                DataCache.fetchNpcFromSelfId(spawn.selfId, (npc) => {
+                DataCache.fetchNpcFromOldSelfId(spawn.selfId, (npc) => {
                     const coords = bounds.map((bound) => {
                         return [bound.locX, bound.locY];
                     });
