@@ -18,6 +18,12 @@ function consume(session, data) {
         const character = characters[data.characterSlot];
 
         Database.deleteCharacter(session.accountId, character.name).then(() => {
+
+            // Clear database from all actor created content
+            Database.deleteSkills   (character.id);
+            Database.deleteItems    (character.id);
+            Database.deleteShortcuts(character.id);
+
             characters.splice(data.characterSlot, 1);
             session.dataSend(ServerResponse.charSelectInfo(characters));
         });
