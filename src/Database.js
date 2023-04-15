@@ -34,6 +34,7 @@ const Database = {
     fetchCharacters    : invoke(path.databaseGame + 'FetchCharacters'),
     createCharacter    : invoke(path.databaseGame + 'CreateCharacter'),
     deleteCharacter    : invoke(path.databaseGame + 'DeleteCharacter'),
+    fetchSkills        : invoke(path.databaseGame + 'FetchSkills'),
     setSkill           : invoke(path.databaseGame + 'SetSkill'),
     setItem            : invoke(path.databaseGame + 'SetItem')
 };
