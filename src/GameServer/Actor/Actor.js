@@ -53,6 +53,12 @@ class Actor extends ActorModel {
         );
     }
 
+    basicAction(data) {
+        invoke(path.actor).basicAction(
+            this.session, this, data
+        );
+    }
+
     // Abstract
 
     isBlocked() {

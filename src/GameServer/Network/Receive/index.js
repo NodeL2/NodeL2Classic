@@ -1,6 +1,8 @@
 module.exports = {
                action: require('./Action'),
+            actionUse: require('./ActionUse'),
           addShortcut: require('./AddShortcut'),
+             appeared: require('./Appeared'),
              authUser: require('./AuthUser'),
            charDelete: require('./CharDelete'),
          charSelected: require('./CharSelected'),
@@ -9,11 +11,13 @@ module.exports = {
            disconnect: require('./Disconnect'),
     enterCharCreation: require('./EnterCharCreation'),
            enterWorld: require('./EnterWorld'),
+             htmlLink: require('./HtmlLink'),
             itemsList: require('./ItemsList'),
        moveToLocation: require('./MoveToLocation'),
       protocolVersion: require('./ProtocolVersion'),
               restart: require('./Restart'),
               showMap: require('./ShowMap'),
            skillsList: require('./SkillsList'),
+                speak: require('./Speak'),
      validatePosition: require('./ValidatePosition')
 };

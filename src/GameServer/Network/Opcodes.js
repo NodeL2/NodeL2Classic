@@ -18,12 +18,17 @@ const Opcodes = {
         table[0x13] = ClientRequest.enterCharCreation;
         table[0x14] = ClientRequest.itemsList;
         table[0x1f] = ClientRequest.action;
+        table[0x23] = ClientRequest.htmlLink;
         table[0x2b] = ClientRequest.authUser;
+        table[0x3a] = ClientRequest.appeared;
         table[0x3d] = ClientRequest.addShortcut;
         table[0x48] = ClientRequest.destUnselect;
+        table[0x49] = ClientRequest.speak;
         table[0x50] = ClientRequest.skillsList;
+        table[0x56] = ClientRequest.actionUse;
         table[0x57] = ClientRequest.restart;
         table[0x59] = ClientRequest.validatePosition;
+        table[0x5c] = () => {}; // Finish Rotate
         table[0x6c] = ClientRequest.showMap;
         table[0xa6] = () => {}; // Skill Cool Time
 

@@ -56,6 +56,10 @@ global.utils = {
         return value.replace(/\u0000/gi, '');
     },
 
+    fileExists(filename) {
+        return require('fs').existsSync(filename);
+    },
+
     parseRawFile(filename, charset = 'utf8') {
         return require('fs').readFileSync(filename, charset);
     },

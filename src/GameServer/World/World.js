@@ -6,8 +6,9 @@ const World = {
         World.spawnNpcs();
     },
 
-    fetchNpc  : invoke(path.world + 'FetchNpc'),
-    spawnNpcs : invoke(path.world + 'SpawnNpcs')
+    fetchNpc        : invoke(path.world + 'FetchNpc'),
+    spawnNpcs       : invoke(path.world + 'SpawnNpcs'),
+    npcTalkResponse : invoke(path.world + 'NpcTalkResponse'),
 };
 
 module.exports = World;
