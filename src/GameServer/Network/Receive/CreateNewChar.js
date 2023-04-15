@@ -47,6 +47,14 @@ function awardBaseSkills(id, classId) {
     });
 }
 
+function awardBaseShortcuts(id, classId) {
+    DataCache.fetchTemplateShortcutsFromClassId(classId, (templateShortcuts) => {
+        templateShortcuts?.shortcuts.forEach((shortcut) => {
+            Database.setShortcut(id, shortcut);
+        });
+    });
+}
+
 function awardBaseGear(id, classId) {
     DataCache.fetchTemplateItemsFromClassId(classId, (templateItems) => {
         templateItems?.items.forEach((item) => {
@@ -72,8 +80,9 @@ function consume(session, data) {
                 );
 
                 const charId = Number(packet.insertId);
-                awardBaseSkills(charId, data.classId);
-                awardBaseGear  (charId, data.classId);
+                awardBaseSkills   (charId, data.classId);
+                awardBaseShortcuts(charId, data.classId);
+                awardBaseGear     (charId, data.classId);
             });
         });
     });

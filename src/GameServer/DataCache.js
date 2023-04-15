@@ -4,12 +4,13 @@ const DataCache = {
     init: () => {
         const path = '../data/';
 
-        DataCache.classTemplates = validateModel(path + 'Templates/templates');
-        DataCache.templateSpawns = validateModel(path + 'Templates/Spawns/spawns');
-        DataCache.templateItems  = validateModel(path + 'Templates/Items/items');
-        DataCache.npcs           = validateModel(path + 'Npcs/npcs');
-        DataCache.npcSpawns      = validateModel(path + 'Npcs/Spawns/spawns');
-        DataCache.skillTree      = validateModel(path + 'Skills/Tree/tree');
+        DataCache.classTemplates    = validateModel(path + 'Templates/templates');
+        DataCache.templateSpawns    = validateModel(path + 'Templates/Spawns/spawns');
+        DataCache.templateShortcuts = validateModel(path + 'Templates/Shortcuts/shortcuts');
+        DataCache.templateItems     = validateModel(path + 'Templates/Items/items');
+        DataCache.npcs              = validateModel(path + 'Npcs/npcs');
+        DataCache.npcSpawns         = validateModel(path + 'Npcs/Spawns/spawns');
+        DataCache.skillTree         = validateModel(path + 'Skills/Tree/tree');
 
         DataCache.skills = [
             ...validateModel(path + 'Skills/Active/active'),
@@ -38,6 +39,16 @@ const DataCache = {
         item ? callback(item) : utils.infoWarn('Datapack', 'unknown Template Spawns ClassId %d', classId);
     },
 
+    fetchTemplateShortcutsFromClassId(classId, callback) {
+        const item = structuredClone(DataCache.templateShortcuts.find((ob) => ob.classId === classId));
+        item ? callback(item) : utils.infoWarn('Datapack', 'unknown Template Shortcuts ClassId %d', classId);
+    },
+
+    fetchTemplateItemsFromClassId(classId, callback) {
+        const item = structuredClone(DataCache.templateItems.find((ob) => ob.classId === classId));
+        item ? callback(item) : utils.infoWarn('Datapack', 'unknown Template Items ClassId %d', classId);
+    },
+
     fetchNpcFromSelfId(selfId, callback) {
         const item = structuredClone(DataCache.npcs.find((ob) => ob.selfId === selfId));
         item ? callback(item) : utils.infoWarn('Datapack', 'unknown Npc SelfId %d', selfId);
@@ -46,11 +57,6 @@ const DataCache = {
     fetchNpcFromSelfIdMuted(selfId, callback) {
         const item = structuredClone(DataCache.npcs.find((ob) => ob.selfId === selfId && ob.dispSelfId !== -1));
         item ? callback(item) : null;
-    },
-
-    fetchTemplateItemsFromClassId(classId, callback) {
-        const item = structuredClone(DataCache.templateItems.find((ob) => ob.classId === classId));
-        item ? callback(item) : utils.infoWarn('Datapack', 'unknown Template Items ClassId %d', classId);
     },
 
     fetchSkillTreeFromClassId(classId, callback) {

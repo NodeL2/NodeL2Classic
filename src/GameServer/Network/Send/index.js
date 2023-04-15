@@ -17,6 +17,7 @@ module.exports = {
                npcInfo: require('./NpcInfo'),
                restart: require('./Restart'),
                showMap: require('./ShowMap'),
+          shortcutInit: require('./ShortcutInit'),
            sitAndStand: require('./SitAndStand'),
             skillsList: require('./SkillsList'),
           socialAction: require('./SocialAction'),

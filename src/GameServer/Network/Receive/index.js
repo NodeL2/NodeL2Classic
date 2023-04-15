@@ -15,6 +15,7 @@ module.exports = {
             itemsList: require('./ItemsList'),
        moveToLocation: require('./MoveToLocation'),
       protocolVersion: require('./ProtocolVersion'),
+       removeShortcut: require('./RemoveShortcut'),
               restart: require('./Restart'),
               showMap: require('./ShowMap'),
            skillsList: require('./SkillsList'),

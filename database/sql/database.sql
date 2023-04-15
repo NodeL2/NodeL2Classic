@@ -20,8 +20,6 @@ CREATE TABLE `characters`(
     `maxHp`       float       NOT NULL,
     `mp`          float       NOT NULL DEFAULT 25,
     `maxMp`       float       NOT NULL,
-    `cp`          float       NOT NULL DEFAULT 10,
-    `maxCp`       float       NOT NULL,
     `exp`         int(20)     NOT NULL DEFAULT 0,
     `sp`          int(10)     NOT NULL DEFAULT 0,
     `pk`          int(10)     NOT NULL DEFAULT 0,
@@ -69,6 +67,6 @@ CREATE TABLE `shortcuts`(
     `id`          int( 8)     NOT NULL,
     `kind`        int( 5)     NOT NULL,
     `slot`        int( 5)     NOT NULL,
-    `unknown`     int( 5)     NOT NULL,
+    `level`       int( 5)     NOT NULL,
     `characterId` int( 8)     NOT NULL
 );

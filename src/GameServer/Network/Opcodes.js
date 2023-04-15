@@ -22,6 +22,7 @@ const Opcodes = {
         table[0x2b] = ClientRequest.authUser;
         table[0x3a] = ClientRequest.appeared;
         table[0x3d] = ClientRequest.addShortcut;
+        table[0x3f] = ClientRequest.removeShortcut;
         table[0x48] = ClientRequest.destUnselect;
         table[0x49] = ClientRequest.speak;
         table[0x50] = ClientRequest.skillsList;
