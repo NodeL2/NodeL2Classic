@@ -1,11 +1,8 @@
-const ServerResponse = invoke('GameServer/Network/Send');
-const Database       = invoke('Database');
+const Shared = invoke('GameServer/Network/Shared');
 
 function backToHall(session, buffer) {
-    Database.fetchCharacters(session.accountId).then((userChars) => {
-        session.dataSend(
-            ServerResponse.charSelectInfo(userChars)
-        );
+    Shared.fetchCharacters(session.accountId).then((characters) => {
+        Shared.enterCharacterHall(session, characters);
     });
 }
 
