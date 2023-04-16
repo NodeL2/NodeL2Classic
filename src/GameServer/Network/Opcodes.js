@@ -32,6 +32,7 @@ const Opcodes = {
         table[0x5c] = () => {}; // Finish Rotate
         table[0x6c] = ClientRequest.showMap;
         table[0xa6] = () => {}; // Skill Cool Time
+        table[0xb3] = ClientRequest.userCommand;
 
         // Extended opcodes
         table[0xd0] = (session, packet) => {

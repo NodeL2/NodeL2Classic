@@ -20,5 +20,6 @@ module.exports = {
               showMap: require('./ShowMap'),
            skillsList: require('./SkillsList'),
                 speak: require('./Speak'),
+          userCommand: require('./UserCommand'),
      validatePosition: require('./ValidatePosition')
 };

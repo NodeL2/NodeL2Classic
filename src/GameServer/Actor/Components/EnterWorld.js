@@ -1,3 +1,5 @@
+const ConsoleText = invoke('GameServer/ConsoleText');
+
 function enterWorld(session, actor) {
     const Components = invoke(path.actor);
 
@@ -11,6 +13,9 @@ function enterWorld(session, actor) {
         locZ: actor.fetchLocZ(),
         head: actor.fetchHead(),
     });
+
+    // Default welcome
+    ConsoleText.transmit(session, ConsoleText.caption.welcome);
 }
 
 module.exports = enterWorld;

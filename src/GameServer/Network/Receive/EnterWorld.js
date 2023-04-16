@@ -14,9 +14,8 @@ function enterWorld(session, buffer) {
     );
 
     Database.fetchShortcuts(session.actor.fetchId()).then((shortcuts) => {
-        session.dataSend(
-            ServerResponse.shortcutInit(shortcuts)
-        );
+        session.dataSend(ServerResponse.shortcutInit(shortcuts));
+        session.dataSend(ServerResponse.skillsList(session.actor.skillset.fetchSkills()));
     });
 }
 

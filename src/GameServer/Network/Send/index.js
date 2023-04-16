@@ -7,6 +7,7 @@ module.exports = {
         charSelectInfo: require('./CharSelectInfo'),
          charTemplates: require('./CharTemplates'),
             cipherInit: require('./CipherInit'),
+           consoleText: require('./ConsoleText'),
           destSelected: require('./DestSelected'),
         destUnselected: require('./DestUnselected'),
      disconnectSuccess: require('./DisconnectSuccess'),
