@@ -1,9 +1,9 @@
 const BackpackModel = invoke('GameServer/Model/Backpack');
 
 class Backpack extends BackpackModel {
-    constructor() {
+    constructor(data) {
         // Parent inheritance
-        super();
+        super(data.paperdoll);
     }
 }
 

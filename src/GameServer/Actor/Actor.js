@@ -11,11 +11,14 @@ class Actor extends ActorModel {
 
         // Local
         this.skillset   = new Skillset();
-        this.backpack   = new Backpack();
+        this.backpack   = new Backpack(data);
         this.automation = new Automation();
 
         this.session    = session;
         this.previousXY = undefined;
+
+        delete this.model.items;
+        delete this.model.paperdoll;
     }
 
     destructor() {

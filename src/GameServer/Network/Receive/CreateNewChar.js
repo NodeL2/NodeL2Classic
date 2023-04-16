@@ -1,4 +1,5 @@
 const ServerResponse = invoke('GameServer/Network/Send');
+const Shared         = invoke('GameServer/Network/Shared');
 const DataCache      = invoke('GameServer/DataCache');
 const PacketReceive  = invoke('Packet/Receive');
 const Database       = invoke('Database');
@@ -83,6 +84,10 @@ function consume(session, data) {
                 awardBaseSkills   (charId, data.classId);
                 awardBaseShortcuts(charId, data.classId);
                 awardBaseGear     (charId, data.classId);
+
+                Shared.fetchCharacters(session.accountId).then((characters) => {
+                    Shared.enterCharacterHall(session, characters);
+                });
             });
         });
     });

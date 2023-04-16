@@ -1,4 +1,5 @@
 const ServerResponse = invoke('GameServer/Network/Send');
+const Shared         = invoke('GameServer/Network/Shared');
 const QualifiedUsers = invoke('AuthenticationServer/QualifiedUsers');
 const PacketReceive  = invoke('Packet/Receive');
 const Database       = invoke('Database');
@@ -23,10 +24,8 @@ function consume(session, data) {
     if (QualifiedUsers.find(data.username, data.secret)) {
         session.dataSend(ServerResponse.authResult(-1, 0x00));
 
-        Database.fetchCharacters(session.accountId).then((characters) => {
-            session.dataSend(
-                ServerResponse.charSelectInfo(characters)
-            );
+        Shared.fetchCharacters(session.accountId).then((characters) => {
+            Shared.enterCharacterHall(session, characters);
         });
         return;
     }
