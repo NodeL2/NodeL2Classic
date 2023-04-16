@@ -1,7 +1,12 @@
-class UserMask {
+const MaskModel = invoke('GameServer/Model/Mask');
+
+class ActorMask extends MaskModel {
     constructor(selection, name) {
+        // Parent inheritance
+        super(selection, name);
+
+        // Local
         this.masks = utils.tupleAlloc(3, 0x00);
-        this.name  = name;
         this.iSize = 5;
 
         this.component = {
@@ -30,10 +35,6 @@ class UserMask {
             M_TRUE_HERO       : { data: 0x16, size:  9 },
         };
 
-        this.block = [
-            0x80, 0x40, 0x20, 0x10, 0x08, 0x04, 0x02, 0x01
-        ];
-
         // Reset contents, and parse components
         this.reset(selection);
         this.parse(selection)
@@ -56,41 +57,6 @@ class UserMask {
                 break;
         }
     }
-
-    addMask(mask) {
-        this.masks[mask.data >> 3] |= this.block[mask.data & 0x7];
-    }
-
-    // Get
-
-    fetchMasks() {
-        return this.masks;
-    }
-
-    fetchSize() {
-        return this.iSize;
-    }
-
-    // Abstract
-
-    reset(selection) {
-        if (!utils.size(selection)) {
-            for (let component in this.component) {
-                selection.push(component);
-            }
-        }
-    }
-
-    parse(selection) {
-        selection.forEach((item) => {
-            this.addSize(this.component[item], item);
-            this.addMask(this.component[item]);
-        });
-    }
-
-    contains(mask) {
-        return this.masks[mask.data >> 3] & this.block[mask.data & 0x7];
-    }
 }
 
-module.exports = UserMask;
+module.exports = ActorMask;

@@ -1,8 +1,8 @@
 const ServerResponse = invoke('GameServer/Network/Send');
-const UserMask       = invoke('GameServer/Network/UserMask');
+const ActorMask      = invoke('GameServer/Actor/ActorMask');
 
 function appeared(session, buffer) {
-    session.dataSend(ServerResponse.userInfo(session.actor, new UserMask([], session.actor.fetchName())));
+    session.dataSend(ServerResponse.userInfo(session.actor, new ActorMask([], session.actor.fetchName())));
 }
 
 module.exports = appeared;

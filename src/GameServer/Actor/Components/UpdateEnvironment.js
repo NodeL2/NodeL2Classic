@@ -1,6 +1,6 @@
 const ServerResponse = invoke('GameServer/Network/Send');
-const NpcMask        = invoke('GameServer/Network/NpcMask');
 const World          = invoke('GameServer/World/World');
+const NpcMask        = invoke('GameServer/Npc/NpcMask');
 const SpeckMath      = invoke('GameServer/SpeckMath');
 
 function updateEnvironment(session, actor) {

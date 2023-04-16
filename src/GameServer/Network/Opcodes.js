@@ -5,7 +5,7 @@ const OpcodesEx     = invoke('GameServer/Network/OpcodesEx');
 const Opcodes = {
     table: (() => {
         const table = utils.tupleAlloc(0x256, (_, packet) => {
-            utils.infoFail('GameServer', 'unknown opcode 0x%s', utils.toHex(packet[0]));
+            utils.infoWarn('GameServer', 'unknown opcode 0x%s', utils.toHex(packet[0]));
         });
 
         table[0x00] = ClientRequest.disconnect;

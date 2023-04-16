@@ -1,9 +1,12 @@
-class NpcMask {
+const MaskModel = invoke('GameServer/Model/Mask');
+
+class NpcMask extends MaskModel {
     constructor(selection, name, title) {
-        this.masks = utils.tupleAlloc(5, 0x00);
-        this.name  = name;
+        // Parent inheritance
+        super(selection, name);
+
+        // Local
         this.title = title;
-        this.iSize = 0;
         this.bSize = 0;
 
         this.masks[0x01] = 0x0c;
@@ -46,13 +49,9 @@ class NpcMask {
             M_VISUAL_STATE     : { data: 0x25, size:  1 },
         };
 
-        this.block = [
-            0x80, 0x40, 0x20, 0x10, 0x08, 0x04, 0x02, 0x01
-        ];
-
         // Reset contents, and parse components
         this.reset(selection);
-        this.parse(selection)
+        this.parse(selection);
     }
 
     // Set
@@ -78,43 +77,10 @@ class NpcMask {
         }
     }
 
-    addMask(mask) {
-        this.masks[mask.data >> 3] |= this.block[mask.data & 0x7];
-    }
-
     // Get
-
-    fetchMasks() {
-        return this.masks;
-    }
-
-    fetchSize() {
-        return this.iSize;
-    }
 
     fetchBlockSize() {
         return this.bSize;
-    }
-
-    // Abstract
-
-    reset(selection) {
-        if (!utils.size(selection)) {
-            for (let component in this.component) {
-                selection.push(component);
-            }
-        }
-    }
-
-    parse(selection) {
-        selection.forEach((item) => {
-            this.addSize(this.component[item], item);
-            this.addMask(this.component[item]);
-        });
-    }
-
-    contains(mask) {
-        return this.masks[mask.data >> 3] & this.block[mask.data & 0x7];
     }
 }
 

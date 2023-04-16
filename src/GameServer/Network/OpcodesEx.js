@@ -4,7 +4,7 @@ const ClientRequestEx = invoke('GameServer/Network/Receive/Ex');
 const OpcodesEx = {
     table: (() => {
         const table = utils.tupleAlloc(0x128, (_, packet) => {
-            utils.infoFail('GameServer', 'unknown extended opcode 0x%s', utils.toHex(packet.readUInt16LE()));
+            utils.infoWarn('GameServer', 'unknown extended opcode 0x%s', utils.toHex(packet.readUInt16LE()));
         });
 
         table[0x001] = () => {}; // Manor List
