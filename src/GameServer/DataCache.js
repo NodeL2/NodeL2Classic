@@ -68,6 +68,11 @@ const DataCache = {
         const item = structuredClone(DataCache.skills.find((ob) => ob.selfId === selfId));
         item ? callback(item) : utils.infoWarn('Datapack', 'unknown Skill SelfId %d', selfId);
     },
+
+    fetchItemFromSelfId(selfId, callback) {
+        const item = structuredClone(DataCache.items.find((ob) => ob.selfId === selfId));
+        item ? callback(item) : utils.infoWarn('Datapack', 'unknown Item SelfId %d', selfId);
+    },
 };
 
 function validateModel(filepath) {

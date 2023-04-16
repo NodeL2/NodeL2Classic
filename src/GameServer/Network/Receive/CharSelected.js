@@ -1,7 +1,7 @@
 const ServerResponse = invoke('GameServer/Network/Send');
+const Shared         = invoke('GameServer/Network/Shared');
 const DataCache      = invoke('GameServer/DataCache');
 const PacketReceive  = invoke('Packet/Receive');
-const Database       = invoke('Database');
 
 function charSelected(session, buffer) {
     const packet = new PacketReceive(buffer);
@@ -15,7 +15,7 @@ function charSelected(session, buffer) {
 }
 
 function consume(session, data) {
-    Database.fetchCharacters(session.accountId).then((characters) => {
+    Shared.fetchCharacters(session.accountId).then((characters) => {
         const character = characters[data.characterSlot];
 
         DataCache.fetchTemplateFromClassId(character.classId, (template) => {
