@@ -1,9 +1,9 @@
 const SQL = require('like-sql'), builder = new SQL();
 
-function fetchUserPassword(username) {
+function accountPassword(username) {
     return this.execute(
         builder.select('accounts', ['password'], 'username = ?', username)
     );
 }
 
-module.exports = fetchUserPassword;
+module.exports = accountPassword;

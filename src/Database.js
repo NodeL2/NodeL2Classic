@@ -25,25 +25,28 @@ const Database = {
 
     // Authentication Server
 
-    createAccount      : invoke(path.databaseAuth + 'CreateAccount'),
-    fetchUserPassword  : invoke(path.databaseAuth + 'FetchUserPassword'),
-    fetchAllCharacters : invoke(path.databaseAuth + 'FetchAllCharacters'),
+    accountCreate     : invoke(path.databaseAuth + 'Accounts/Create'),
+    accountPassword   : invoke(path.databaseAuth + 'Accounts/Password'),
+    accountCharacters : invoke(path.databaseAuth + 'Accounts/Characters'),
 
     // Game Server
 
-    fetchCharacters    : invoke(path.databaseGame + 'FetchCharacters'),
-    createCharacter    : invoke(path.databaseGame + 'CreateCharacter'),
-    deleteCharacter    : invoke(path.databaseGame + 'DeleteCharacter'),
-    fetchSkills        : invoke(path.databaseGame + 'FetchSkills'),
-    deleteSkills       : invoke(path.databaseGame + 'DeleteSkills'),
-    setSkill           : invoke(path.databaseGame + 'SetSkill'),
-    fetchItems         : invoke(path.databaseGame + 'FetchItems'),
-    setItem            : invoke(path.databaseGame + 'SetItem'),
-    deleteItems        : invoke(path.databaseGame + 'DeleteItems'),
-    fetchShortcuts     : invoke(path.databaseGame + 'FetchShortcuts'),
-    setShortcut        : invoke(path.databaseGame + 'SetShortcut'),
-    deleteShortcut     : invoke(path.databaseGame + 'DeleteShortcut'),
-    deleteShortcuts    : invoke(path.databaseGame + 'DeleteShortcuts')
+    characterFetchAll : invoke(path.databaseGame + 'Characters/FetchAll'),
+    characterCreate   : invoke(path.databaseGame + 'Characters/Create'),
+    characterDelete   : invoke(path.databaseGame + 'Characters/Delete'),
+
+    skillFetchAll     : invoke(path.databaseGame + 'Skills/FetchAll'),
+    skillCreate       : invoke(path.databaseGame + 'Skills/Create'),
+    skillDeleteAll    : invoke(path.databaseGame + 'Skills/DeleteAll'),
+
+    itemFetchAll      : invoke(path.databaseGame + 'Items/FetchAll'),
+    itemCreate        : invoke(path.databaseGame + 'Items/Create'),
+    itemDeleteAll     : invoke(path.databaseGame + 'Items/DeleteAll'),
+
+    shortcutFetchAll  : invoke(path.databaseGame + 'Shortcuts/FetchAll'),
+    shortcutCreate    : invoke(path.databaseGame + 'Shortcuts/Create'),
+    shortcutDeleteAll : invoke(path.databaseGame + 'Shortcuts/DeleteAll'),
+    shortcutDelete    : invoke(path.databaseGame + 'Shortcuts/Delete')
 };
 
 module.exports = Database;

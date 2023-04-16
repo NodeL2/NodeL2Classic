@@ -16,12 +16,6 @@ class Automation {
         this.abortAll(creature);
     }
 
-    ticksToMove(from, to, radius, speed) {
-        const distance = from.distance(to) - radius;
-        const duration = 1 + ((this.ticksPerSecond * distance) / speed);
-        return (1000 / this.ticksPerSecond) * duration;
-    }
-
     scheduleMovement(session, kind, src, dst, radius, callback) {
         const from = new SpeckMath.Point3D(
             src.fetchLocX(),
@@ -59,16 +53,23 @@ class Automation {
 
         // Report
         this.timer.repeat.start(() => {
-            src.setLocXYZ(from.midPoint(to, this.fetchDistanceRatio()).toCoords());
+            this.fetchDistanceRatio((ratio) => {
+                src.setLocXYZ(from.midPoint(to, ratio).toCoords());
+            });
 
         }, 100);
     }
 
-    fetchDistanceRatio() {
+    ticksToMove(from, to, radius, speed) {
+        const distance = from.distance(to) - radius;
+        const duration = 1 + ((this.ticksPerSecond * distance) / speed);
+        return (1000 / this.ticksPerSecond) * duration;
+    }
+
+    fetchDistanceRatio(callback) {
         if (this.timer.once.exists()) {
-            return this.timer.once.completeness();
+            callback(this.timer.once.completeness());
         }
-        return false;
     }
 
     abortAll(creature) {

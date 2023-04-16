@@ -1,6 +1,6 @@
 const SQL = require('like-sql'), builder = new SQL();
 
-function createCharacter(username, data) {
+function characterCreate(username, data) {
     return this.execute(
         builder.insert('characters', {
              username: username,
@@ -20,4 +20,4 @@ function createCharacter(username, data) {
     );
 }
 
-module.exports = createCharacter;
+module.exports = characterCreate;

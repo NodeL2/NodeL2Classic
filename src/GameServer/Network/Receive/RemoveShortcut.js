@@ -13,7 +13,7 @@ function removeShortcut(session, buffer) {
 }
 
 function consume(session, data) {
-    Database.deleteShortcut(session.actor.fetchId(), data.slot);
+    Database.shortcutDelete(session.actor.fetchId(), data.slot);
 }
 
 module.exports = removeShortcut;

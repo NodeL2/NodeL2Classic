@@ -1,6 +1,6 @@
 const SQL = require('like-sql'), builder = new SQL();
 
-function setShortcut(characterId, shortcut) {
+function shortcutCreate(characterId, shortcut) {
     return this.execute(
         builder.insert('shortcuts', {
                      id: shortcut.id,
@@ -12,4 +12,4 @@ function setShortcut(characterId, shortcut) {
     );
 }
 
-module.exports = setShortcut;
+module.exports = shortcutCreate;

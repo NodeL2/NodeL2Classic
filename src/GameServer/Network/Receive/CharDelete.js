@@ -17,12 +17,12 @@ function consume(session, data) {
     Shared.fetchCharacters(session.accountId).then((characters) => {
         const character = characters[data.characterSlot];
 
-        Database.deleteCharacter(session.accountId, character.name).then(() => {
+        Database.characterDelete(session.accountId, character.name).then(() => {
 
             // Clear database from all actor created content
-            Database.deleteSkills   (character.id);
-            Database.deleteItems    (character.id);
-            Database.deleteShortcuts(character.id);
+            Database.   skillDeleteAll(character.id);
+            Database.    itemDeleteAll(character.id);
+            Database.shortcutDeleteAll(character.id);
 
             characters.splice(data.characterSlot, 1);
             Shared.enterCharacterHall(session, characters);

@@ -1,9 +1,9 @@
 const SQL = require('like-sql'), builder = new SQL();
 
-function fetchCharacters(username) {
+function characterFetchAll(username) {
     return this.execute(
         builder.select('characters', ['*'], 'username = ?', username)
     );
 }
 
-module.exports = fetchCharacters;
+module.exports = characterFetchAll;

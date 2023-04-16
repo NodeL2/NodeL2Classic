@@ -24,7 +24,7 @@ class Skillset {
             item ? success(item) : utils.infoWarn('GameServer', 'unknown Skill Id %d with Level %d', skill.selfId, level);
         };
 
-        Database.fetchSkills(characterId).then((ownedSkills) => {
+        Database.skillFetchAll(characterId).then((ownedSkills) => {
             ownedSkills.forEach((ownedSkill) => {
                 DataCache.fetchSkillFromSelfId(ownedSkill.selfId, (skill) => {
                     skillLevelLookup(skill, ownedSkill.level, (level) => {

@@ -6,7 +6,7 @@ const Shared = {
         return new Promise((success) => {
             const createPaperdoll = (character) => {
                 return new Promise((done) => {
-                    Database.fetchItems(character.id).then((items) => {
+                    Database.itemFetchAll(character.id).then((items) => {
                         character.items = items;
                         character.paperdoll = utils.tupleAlloc(33 + 1, {});
 
@@ -24,7 +24,7 @@ const Shared = {
                 });
             };
 
-            Database.fetchCharacters(accountId).then((characters) => {
+            Database.characterFetchAll(accountId).then((characters) => {
                 characters.reduce((previous, character) => {
                     return previous.then(() => {
                         return createPaperdoll(character);

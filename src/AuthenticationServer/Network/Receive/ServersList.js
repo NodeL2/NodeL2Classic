@@ -21,7 +21,7 @@ function consume(session, data) {
         return;
     }
 
-    Database.fetchAllCharacters().then((rows) => {
+    Database.accountCharacters().then((rows) => {
         const stats = {
             population: utils.size(rows.filter((ob) => ob.isOnline)),
             characters: utils.size(rows.filter((ob) => session.accountId === ob.username))

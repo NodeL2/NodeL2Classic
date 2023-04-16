@@ -24,8 +24,8 @@ function addShortcut(session, buffer) {
 function consume(session, data) {
     const characterId = session.actor.fetchId();
 
-    Database.deleteShortcut(characterId, data.slot).then(() => {
-        Database.setShortcut(characterId, data).then(() => {
+    Database.shortcutDelete(characterId, data.slot).then(() => {
+        Database.shortcutCreate(characterId, data).then(() => {
             session.dataSend(
                 ServerResponse.addShortcut(data)
             );

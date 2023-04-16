@@ -41,16 +41,8 @@ function awardBaseSkills(id, classId) {
             skill.levels = skill.levels.filter((ob) => ob.pLevel === 1);
             DataCache.fetchSkillFromSelfId(skill.selfId, (skillDetails) => {
                 skill = { ...utils.crushOb(skill), passive: skillDetails.template?.passive ?? false };
-                Database.setSkill(id, skill);
+                Database.skillCreate(id, skill);
             });
-        });
-    });
-}
-
-function awardBaseShortcuts(id, classId) {
-    DataCache.fetchTemplateShortcutsFromClassId(classId, (templateShortcuts) => {
-        templateShortcuts?.shortcuts.forEach((shortcut) => {
-            Database.setShortcut(id, shortcut);
         });
     });
 }
@@ -59,7 +51,15 @@ function awardBaseGear(id, classId) {
     DataCache.fetchTemplateItemsFromClassId(classId, (templateItems) => {
         templateItems?.items.forEach((item) => {
             item.slot = DataCache.items.find(ob => item.selfId === ob.selfId)?.etc?.slot ?? 0;
-            Database.setItem(id, item);
+            Database.itemCreate(id, item);
+        });
+    });
+}
+
+function awardBaseShortcuts(id, classId) {
+    DataCache.fetchTemplateShortcutsFromClassId(classId, (templateShortcuts) => {
+        templateShortcuts?.shortcuts.forEach((shortcut) => {
+            Database.shortcutCreate(id, shortcut);
         });
     });
 }
@@ -74,15 +74,15 @@ function consume(session, data) {
                 ...template.vitals, ...data, ...coords
             };
 
-            Database.createCharacter(session.accountId, template).then((packet) => {
+            Database.characterCreate(session.accountId, template).then((packet) => {
                 session.dataSend(
                     ServerResponse.charCreateSuccess()
                 );
 
                 const charId = Number(packet.insertId);
-                awardBaseSkills   (charId, data.classId);
-                awardBaseShortcuts(charId, data.classId);
-                awardBaseGear     (charId, data.classId);
+                awardBaseSkills    (charId, data.classId);
+                awardBaseGear      (charId, data.classId);
+                awardBaseShortcuts (charId, data.classId);
             });
         });
     });

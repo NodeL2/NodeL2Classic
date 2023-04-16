@@ -1,6 +1,6 @@
 const SQL = require('like-sql'), builder = new SQL();
 
-function setSkill(characterId, skill) {
+function skillCreate(characterId, skill) {
     return this.execute(
         builder.insert('skills', {
                  selfId: skill.selfId,
@@ -12,4 +12,4 @@ function setSkill(characterId, skill) {
     );
 }
 
-module.exports = setSkill;
+module.exports = skillCreate;

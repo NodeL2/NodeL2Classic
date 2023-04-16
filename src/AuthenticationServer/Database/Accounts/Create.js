@@ -1,9 +1,9 @@
 const SQL = require('like-sql'), builder = new SQL();
 
-function createAccount(username, password) {
+function accountCreate(username, password) {
     return this.execute(
         builder.insert('accounts', { username: username, password: password })
     );
 }
 
-module.exports = createAccount;
+module.exports = accountCreate;

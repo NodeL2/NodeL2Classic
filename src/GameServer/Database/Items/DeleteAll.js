@@ -1,9 +1,9 @@
 const SQL = require('like-sql'), builder = new SQL();
 
-function deleteItems(characterId) {
+function itemDeleteAll(characterId) {
     return this.execute(
         builder.delete('items', 'characterId = ?', characterId)
     );
 }
 
-module.exports = deleteItems;
+module.exports = itemDeleteAll;

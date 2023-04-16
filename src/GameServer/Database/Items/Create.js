@@ -1,6 +1,6 @@
 const SQL = require('like-sql'), builder = new SQL();
 
-function setItem(characterId, item) {
+function itemCreate(characterId, item) {
     return this.execute(
         builder.insert('items', {
                  selfId: item.selfId,
@@ -13,4 +13,4 @@ function setItem(characterId, item) {
     );
 }
 
-module.exports = setItem;
+module.exports = itemCreate;

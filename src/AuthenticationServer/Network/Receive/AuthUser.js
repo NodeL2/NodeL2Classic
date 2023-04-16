@@ -36,7 +36,7 @@ function consume(session, data) {
         return;
     }
 
-    Database.fetchUserPassword(data.username).then((rows) => {
+    Database.accountPassword(data.username).then((rows) => {
         const password = rows[0]?.password;
 
         // Username exists in database
@@ -47,7 +47,7 @@ function consume(session, data) {
             const optn = options.default.AuthServer;
 
             if (optn.autoCreate) {
-                Database.createAccount(data.username, data.password).then(() => {
+                Database.accountCreate(data.username, data.password).then(() => {
                     consume(session, data);
                 });
             }

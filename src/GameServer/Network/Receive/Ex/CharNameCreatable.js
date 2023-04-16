@@ -16,7 +16,7 @@ function charNameCreatable(session, buffer) {
 function consume(session, data) {
     let result = -1;
 
-    Database.fetchAllCharacters().then((rows) => {
+    Database.accountCharacters().then((rows) => {
         if (rows.find((ob) => data.name === ob.name)) {
             result = 2;
         }

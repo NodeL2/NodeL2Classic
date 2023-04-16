@@ -1,9 +1,9 @@
 const SQL = require('like-sql'), builder = new SQL();
 
-function fetchItems(characterId) {
+function itemFetchAll(characterId) {
     return this.execute(
         builder.select('items', ['*'], 'characterId = ?', characterId)
     );
 }
 
-module.exports = fetchItems;
+module.exports = itemFetchAll;

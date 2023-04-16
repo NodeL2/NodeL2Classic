@@ -1,9 +1,9 @@
 const SQL = require('like-sql'), builder = new SQL();
 
-function fetchShortcuts(characterId) {
+function shortcutFetchAll(characterId) {
     return this.execute(
         builder.select('shortcuts', ['*'], 'characterId = ?', characterId)
     );
 }
 
-module.exports = fetchShortcuts;
+module.exports = shortcutFetchAll;
