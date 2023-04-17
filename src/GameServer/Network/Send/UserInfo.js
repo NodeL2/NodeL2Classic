@@ -11,7 +11,7 @@ function userInfo(actor, masks) {
 
     if (masks.contains(masks.component.M_RELATION)) {
         packet
-            .writeD(0x00); // Relation
+            .writeD(0x00);
     }
 
     if (masks.contains(masks.component.M_BASIC_INFO)) {
@@ -175,12 +175,12 @@ function userInfo(actor, masks) {
         packet
             .writeH(22)
             .writeC(0x00) // PvP
-            .writeD(0x00) // Reputation
+            .writeD(actor.fetchReputation())
             .writeC(0x00) // Noble
             .writeC(0x00) // Hero
             .writeC(0x00) // ?
-            .writeD(actor.fetchPk())
-            .writeD(actor.fetchPvp())
+            .writeD(actor.fetchPK())
+            .writeD(actor.fetchPvP())
             .writeH(actor.fetchRecRemain())
             .writeH(actor.fetchEvalScore());
     }

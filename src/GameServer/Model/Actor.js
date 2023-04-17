@@ -43,12 +43,16 @@ class ActorModel extends CreatureModel {
     fetchSwim() {
         return this.model.swim;
     }
+
+    fetchReputation() {
+        return this.model.reputation;
+    }
     
-    fetchPvp() {
+    fetchPvP() {
         return this.model.pvp;
     }
 
-    fetchPk() {
+    fetchPK() {
         return this.model.pk;
     }
 
