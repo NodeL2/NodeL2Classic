@@ -1,8 +1,8 @@
 const ServerResponse = invoke('GameServer/Network/Send');
 
-function unselect(session, actor) {
-    actor.clearDestId();
-    session.dataSend(ServerResponse.destUnselected(actor));
+function unselect() {
+    this.clearDestId();
+    this.session.dataSend(ServerResponse.destUnselected(this));
 }
 
 module.exports = unselect;

@@ -1,28 +1,26 @@
 const ServerResponse = invoke('GameServer/Network/Send');
 const World          = invoke('GameServer/World/World');
 
-function select(session, actor, data) {
-    const Components = invoke(path.actor);
+function select(data) {
+    if (this.fetchId() === data.id) { // Click on self
+        this.setDestId(this.fetchId());
 
-    if (actor.fetchId() === data.id) { // Click on self
-        actor.setDestId(actor.fetchId());
-
-        session.dataSend(
-            ServerResponse.destSelected(actor.fetchDestId())
+        this.session.dataSend(
+            ServerResponse.destSelected(this.fetchDestId())
         );
         return;
     }
 
     World.fetchNpc(data.id, (npc) => {
-        if (npc.fetchId() !== actor.fetchDestId()) { // First click on a Creature
-            actor.setDestId(npc.fetchId());
+        if (npc.fetchId() !== this.fetchDestId()) { // First click on a Creature
+            this.setDestId(npc.fetchId());
 
-            session.dataSend(
-                ServerResponse.destSelected(actor.fetchDestId(), actor.fetchLevel() - npc.fetchLevel())
+            this.session.dataSend(
+                ServerResponse.destSelected(this.fetchDestId(), this.fetchLevel() - npc.fetchLevel())
             );
         }
         else { // Second click on same Creature
-            Components.attackRequest(session, actor, npc);
+            this.attackRequest(npc);
         }
     },
 

@@ -1,11 +1,9 @@
-function updatePosition(session, actor, coords) {
-    const Components = invoke(path.actor);
-
+function updatePosition(coords) {
     // TODO: Write less in DB about movement
-    actor.setLocXYZH(coords);
+    this.setLocXYZH(coords);
 
     // Update Online users, NPCs, underwater locations
-    Components.updateEnvironment(session, actor);
+    this.updateEnvironment();
 }
 
 module.exports = updatePosition;

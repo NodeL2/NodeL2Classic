@@ -1,9 +1,9 @@
-function attackRequest(session, actor, npc) {
-    if (actor.state.inMotion()) {
-        actor.automation.abortAll(actor);
+function attackRequest(npc) {
+    if (this.state.inMotion()) {
+        this.automation.abortAll(this);
     }
 
-    actor.automation.scheduleMovement(session, 'melee', actor, npc, 0, () => {
+    this.automation.scheduleMovement(this.session, 'melee', this, npc, 0, () => {
         console.info('Arrived ' + Math.random());
     });
 }

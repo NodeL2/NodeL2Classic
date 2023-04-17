@@ -1,9 +1,9 @@
-function moveTo(session, actor, coords) {
-    if (actor.state.inMotion()) {
-        actor.automation.abortAll(actor);
+function moveTo(coords) {
+    if (this.state.inMotion()) {
+        this.automation.abortAll(this);
     }
 
-    actor.automation.scheduleMovement(session, 'movement', actor, coords.to, 0, () => {
+    this.automation.scheduleMovement(this.session, 'movement', this, coords.to, 0, () => {
         console.info('Arrived ' + Math.random());
     });
 }

@@ -17,7 +17,7 @@ function speak(session, buffer) {
 function consume(session, data) {
     if (data.kind === 0) { // TODO: Remove, temp solution
         if (data.text === '.admin') {
-            invoke(path.actor).adminPanel(session, session.actor);
+            session.actor.showAdminPanel();
             return;
         }
     }

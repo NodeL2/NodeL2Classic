@@ -1,21 +1,19 @@
 const ConsoleText = invoke('GameServer/ConsoleText');
 
-function enterWorld(session, actor) {
-    const Components = invoke(path.actor);
-
+function enterWorld() {
     // Populate skills
-    actor.skillset.populate(actor.fetchId());
+    this.skillset.populate(this.fetchId());
 
     // Show NPCs based on radius
-    Components.updatePosition(session, actor, {
-        locX: actor.fetchLocX(),
-        locY: actor.fetchLocY(),
-        locZ: actor.fetchLocZ(),
-        head: actor.fetchHead(),
+    this.updatePosition({
+        locX: this.fetchLocX(),
+        locY: this.fetchLocY(),
+        locZ: this.fetchLocZ(),
+        head: this.fetchHead(),
     });
 
     // Default welcome
-    ConsoleText.transmit(session, ConsoleText.caption.welcome);
+    ConsoleText.transmit(this.session, ConsoleText.caption.welcome);
 }
 
 module.exports = enterWorld;

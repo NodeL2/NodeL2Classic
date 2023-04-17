@@ -1,18 +1,16 @@
 const ServerResponse   = invoke('GameServer/Network/Send');
 const ServerResponseEx = invoke('GameServer/Network/Send/Ex');
 
-function teleportTo(session, actor, coords) {
-    const Generics = invoke(path.actor);
-
-    actor.clearDestId();
-    actor.automation.abortAll(actor);
-    session.dataSend(ServerResponse.teleportToLocation(actor.fetchId(), coords));
-    session.dataSend(ServerResponseEx.teleportActivate(actor.fetchId(), coords));
+function teleportTo(coords) {
+    this.clearDestId();
+    this.automation.abortAll(this);
+    this.session.dataSend(ServerResponse.teleportToLocation(this.fetchId(), coords));
+    this.session.dataSend(ServerResponseEx.teleportActivate(this.fetchId(), coords));
 
     // Turns out to be a viable solution
     setTimeout(() => {
-        Generics.updatePosition(session, actor, coords);
-        Generics.updateEnvironment(session, actor); // Force update position, in case we Teleport to the same Location
+        this.updatePosition(coords);
+        this.updateEnvironment(); // Force update position, in case we Teleport to the same Location
     }, 1000);
 }
 

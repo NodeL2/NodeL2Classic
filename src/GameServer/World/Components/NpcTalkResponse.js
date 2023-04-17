@@ -29,7 +29,7 @@ function npcTalkResponse(session, data) {
                     head: session.actor.fetchHead()
                 };
 
-                invoke(path.actor).teleportTo(session, session.actor, coords);
+                session.actor.teleportTo(coords);
             }
             break;
 
@@ -43,7 +43,7 @@ function npcTalkResponse(session, data) {
                 });
 
                 const pos = require('random-point-in-shape')(coords);
-                invoke(path.actor).teleportTo(session, session.actor, {
+                session.actor.teleportTo({
                     locX: pos[0], locY: pos[1], locZ: selected.bounds[0].maxZ, head: utils.randomNumber(65536),
                 });
             }

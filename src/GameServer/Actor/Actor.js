@@ -26,41 +26,16 @@ class Actor extends ActorModel {
 
     // Request packets
 
-    enterWorld() {
-        invoke(path.actor).enterWorld(
-            this.session, this
-        );
-    }
-
-    select(data) {
-        invoke(path.actor).select(
-            this.session, this, data
-        );
-    }
-
-    unselect() {
-        invoke(path.actor).unselect(
-            this.session, this
-        );
-    }
-
-    moveTo(data) {
-        invoke(path.actor).moveTo(
-            this.session, this, data
-        );
-    }
-
-    updatePosition(data) {
-        invoke(path.actor).updatePosition(
-            this.session, this, data
-        );
-    }
-
-    basicAction(data) {
-        invoke(path.actor).basicAction(
-            this.session, this, data
-        );
-    }
+    enterWorld        = invoke(path.actor + 'EnterWorld')
+    moveTo            = invoke(path.actor + 'MoveTo')
+    updatePosition    = invoke(path.actor + 'UpdatePosition')
+    updateEnvironment = invoke(path.actor + 'updateEnvironment')
+    select            = invoke(path.actor + 'Select')
+    unselect          = invoke(path.actor + 'Unselect')
+    basicAction       = invoke(path.actor + 'BasicAction')
+    attackRequest     = invoke(path.actor + 'AttackRequest')
+    teleportTo        = invoke(path.actor + 'TeleportTo')
+    showAdminPanel    = invoke(path.actor + 'ShowAdminPanel')
 
     // Abstract
 
