@@ -11,7 +11,7 @@ const Database = {
 
         }).then((instance) => {
             utils.infoSuccess('DB', 'connected');
-            Database.conn = instance;
+            this.conn = instance;
             callback();
 
         }).catch(error => {
@@ -20,7 +20,7 @@ const Database = {
     },
 
     execute: (sql) => {
-        return Database.conn.query(sql[0], sql[1]);
+        return this.conn.query(sql[0], sql[1]);
     },
 
     // Authentication Server

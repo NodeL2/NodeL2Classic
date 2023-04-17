@@ -30,7 +30,7 @@ const DataCache = {
     // Templates
 
     fetchTemplateFromClassId(classId, callback) {
-        const item = structuredClone(DataCache.classTemplates.find(ob => ob.classId === classId));
+        const item = structuredClone(DataCache.classTemplates.find((ob) => ob.classId === classId));
         item ? callback(item) : utils.infoWarn('Datapack', 'unknown Template ClassId %d', classId);
     },
 

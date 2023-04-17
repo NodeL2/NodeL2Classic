@@ -50,7 +50,7 @@ function awardBaseSkills(id, classId) {
 function awardBaseGear(id, classId) {
     DataCache.fetchTemplateItemsFromClassId(classId, (templateItems) => {
         templateItems?.items.forEach((item) => {
-            item.slot = DataCache.items.find(ob => item.selfId === ob.selfId)?.etc?.slot ?? 0;
+            item.slot = DataCache.items.find((ob) => item.selfId === ob.selfId)?.etc?.slot ?? 0;
             Database.itemCreate(id, item);
         });
     });
