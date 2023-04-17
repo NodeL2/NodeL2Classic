@@ -49,13 +49,13 @@ function charSelectInfo(characters) {
         packet
             .writeD(character.paperdoll[ 7].selfId)  // Weapon
             .writeD(character.paperdoll[ 8].selfId)  // Shield
-            .writeD(character.paperdoll[14].selfId)  // Dual Weapon
+            .writeD(character.paperdoll[ 9].selfId)  // Hands
             .writeD(character.paperdoll[10].selfId)  // Chest
             .writeD(character.paperdoll[11].selfId)  // Pants
-            .writeD(character.paperdoll[ 9].selfId)  // Hands
             .writeD(character.paperdoll[12].selfId)  // Feet
+            .writeD(character.paperdoll[14].selfId)  // Dual Weapon
             .writeD(character.paperdoll[15].selfId)  // Hair
-            .writeD(character.paperdoll[16].selfId); // Hair
+            .writeD(character.paperdoll[16].selfId); // Hair?
 
         packet
             .writeH(0x00)

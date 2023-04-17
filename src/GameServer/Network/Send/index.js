@@ -1,6 +1,7 @@
 module.exports = {
           actionFailed: require('./ActionFailed'),
            addShortcut: require('./AddShortcut'),
+                attack: require('./Attack'),
             authResult: require('./AuthResult'),
      charCreateSuccess: require('./CharCreateSuccess'),
           charSelected: require('./CharSelected'),
