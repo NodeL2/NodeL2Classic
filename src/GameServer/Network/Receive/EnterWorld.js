@@ -7,6 +7,7 @@ function enterWorld(session, buffer) {
     session.actor.enterWorld();
     session.dataSend(ServerResponse.sunrise()); // TODO: Server timer
     session.dataSend(ServerResponse.userInfo(session.actor, new ActorMask([], session.actor.fetchName())));
+    session.dataSend(ServerResponse.charInfo(session.actor));
 
     // Extended
     session.dataSend(

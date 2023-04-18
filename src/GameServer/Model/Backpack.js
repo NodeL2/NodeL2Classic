@@ -27,6 +27,14 @@ class BackpackModel {
     fetchItems() {
         return this.items;
     }
+
+    fetchPaperdollId(slot) {
+        return this.paperdoll[slot].id;
+    }
+
+    fetchPaperdollSelfId(slot) {
+        return this.paperdoll[slot].selfId;
+    }
 }
 
 module.exports = BackpackModel;

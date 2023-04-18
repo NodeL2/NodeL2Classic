@@ -43,19 +43,23 @@ function charSelectInfo(characters) {
             .writeD(0x00)  // ?
             .writeD(0x00)  // ?
             .writeD(0x00)  // ?
-            .writeD(0x00)  // ?
+            .writeD(0x00); // ?
 
         for (let i = 0; i < 33; i++) {
             packet
                 .writeD(character.paperdoll[i].id);
         }
 
-        for (let i = 7; i < 17; i = i + (i !== 12 ? 1 : 2)) {
-            packet
-                .writeD(character.paperdoll[i].selfId);
-        }
-
         packet
+            .writeD(character.paperdoll[ 7].selfId)  // Weapon
+            .writeD(character.paperdoll[ 8].selfId)  // Shield
+            .writeD(character.paperdoll[ 9].selfId)  // Hands
+            .writeD(character.paperdoll[10].selfId)  // Chest
+            .writeD(character.paperdoll[11].selfId)  // Pants
+            .writeD(character.paperdoll[12].selfId)  // Feet
+            .writeD(character.paperdoll[14].selfId)  // Dual Weapon?
+            .writeD(character.paperdoll[15].selfId)  // Hair
+            .writeD(character.paperdoll[16].selfId)  // Hair?
             .writeH(0x00)
             .writeH(0x00)
             .writeH(0x00)

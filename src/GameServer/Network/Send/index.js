@@ -4,6 +4,7 @@ module.exports = {
                 attack: require('./Attack'),
             authResult: require('./AuthResult'),
      charCreateSuccess: require('./CharCreateSuccess'),
+              charInfo: require('./CharInfo'),
           charSelected: require('./CharSelected'),
         charSelectInfo: require('./CharSelectInfo'),
          charTemplates: require('./CharTemplates'),
