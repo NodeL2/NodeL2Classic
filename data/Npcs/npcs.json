@@ -1500,7 +1500,7 @@
     "rewards": { "exp": 1.2, "sp": 226 }
 },{
     "selfId": 126,
-    "dispSelfId": -1,
+    "dispSelfId": 31845,
     "template": { "kind": "Citizen", "name": "Pixy", "title": "", "level": 50, "hostile": false },
     "base": { "str": 40, "dex": 30, "con": 43, "int": 21, "wit": 20, "men": 10 },
     "stats": { "pAtk": 336.103970998851, "pAtkRnd": 30, "pDef": 200.238442298688, "mAtk": 208.650402871762, "mDef": 146.525801870672, "accur": 4.75, "atkSpd": 253, "castSpd": 333, "atkRadius": 40 },
@@ -2148,7 +2148,7 @@
     "rewards": { "exp": 29.39, "sp": 2 }
 },{
     "selfId": 180,
-    "dispSelfId": -1,
+    "dispSelfId": 20016,
     "template": { "kind": "Monster", "name": "Greater Stone Golem", "title": "", "level": 1, "hostile": false },
     "base": { "str": 40, "dex": 30, "con": 43, "int": 21, "wit": 20, "men": 10 },
     "stats": { "pAtk": 4.12912046182547, "pAtkRnd": 30, "pDef": 45.8791162425052, "mAtk": 5.78703703703704, "mDef": 32.5225155877146, "accur": 4.75, "atkSpd": 253, "castSpd": 333, "atkRadius": 40 },
@@ -2160,7 +2160,7 @@
     "rewards": { "exp": 29.39, "sp": 2 }
 },{
     "selfId": 181,
-    "dispSelfId": -1,
+    "dispSelfId": 20593,
     "template": { "kind": "Monster", "name": "Grace Unicorn", "title": "", "level": 1, "hostile": false },
     "base": { "str": 40, "dex": 30, "con": 43, "int": 21, "wit": 20, "men": 10 },
     "stats": { "pAtk": 4.12912046182547, "pAtkRnd": 30, "pDef": 45.8791162425052, "mAtk": 5.78703703703704, "mDef": 32.5225155877146, "accur": 4.75, "atkSpd": 253, "castSpd": 333, "atkRadius": 40 },
@@ -2172,7 +2172,7 @@
     "rewards": { "exp": 29.39, "sp": 2 }
 },{
     "selfId": 182,
-    "dispSelfId": -1,
+    "dispSelfId": 20013,
     "template": { "kind": "Monster", "name": "Grace Dryad", "title": "", "level": 1, "hostile": false },
     "base": { "str": 40, "dex": 30, "con": 43, "int": 21, "wit": 20, "men": 10 },
     "stats": { "pAtk": 4.12912046182547, "pAtkRnd": 30, "pDef": 45.8791162425052, "mAtk": 5.78703703703704, "mDef": 32.5225155877146, "accur": 4.75, "atkSpd": 253, "castSpd": 333, "atkRadius": 40 },
@@ -2184,7 +2184,7 @@
     "rewards": { "exp": 29.39, "sp": 2 }
 },{
     "selfId": 183,
-    "dispSelfId": -1,
+    "dispSelfId": 30411,
     "template": { "kind": "Monster", "name": "Hellfire Salamander", "title": "", "level": 1, "hostile": false },
     "base": { "str": 40, "dex": 30, "con": 43, "int": 21, "wit": 20, "men": 10 },
     "stats": { "pAtk": 4.12912046182547, "pAtkRnd": 30, "pDef": 45.8791162425052, "mAtk": 5.78703703703704, "mDef": 32.5225155877146, "accur": 4.75, "atkSpd": 253, "castSpd": 333, "atkRadius": 40 },
@@ -2196,7 +2196,7 @@
     "rewards": { "exp": 29.39, "sp": 2 }
 },{
     "selfId": 184,
-    "dispSelfId": -1,
+    "dispSelfId": 30412,
     "template": { "kind": "Monster", "name": "Clearwind Sylph", "title": "", "level": 1, "hostile": false },
     "base": { "str": 40, "dex": 30, "con": 43, "int": 21, "wit": 20, "men": 10 },
     "stats": { "pAtk": 4.12912046182547, "pAtkRnd": 30, "pDef": 45.8791162425052, "mAtk": 5.78703703703704, "mDef": 32.5225155877146, "accur": 4.75, "atkSpd": 253, "castSpd": 333, "atkRadius": 40 },
@@ -2208,7 +2208,7 @@
     "rewards": { "exp": 29.39, "sp": 2 }
 },{
     "selfId": 185,
-    "dispSelfId": -1,
+    "dispSelfId": 30413,
     "template": { "kind": "Monster", "name": "Maelstrom Undine", "title": "", "level": 1, "hostile": false },
     "base": { "str": 40, "dex": 30, "con": 43, "int": 21, "wit": 20, "men": 10 },
     "stats": { "pAtk": 4.12912046182547, "pAtkRnd": 30, "pDef": 45.8791162425052, "mAtk": 5.78703703703704, "mDef": 32.5225155877146, "accur": 4.75, "atkSpd": 253, "castSpd": 333, "atkRadius": 40 },
@@ -2220,7 +2220,7 @@
     "rewards": { "exp": 29.39, "sp": 2 }
 },{
     "selfId": 186,
-    "dispSelfId": -1,
+    "dispSelfId": 25756,
     "template": { "kind": "Monster", "name": "Greater Dre Vanul", "title": "", "level": 1, "hostile": false },
     "base": { "str": 40, "dex": 30, "con": 43, "int": 21, "wit": 20, "men": 10 },
     "stats": { "pAtk": 4.12912046182547, "pAtkRnd": 30, "pDef": 45.8791162425052, "mAtk": 5.78703703703704, "mDef": 32.5225155877146, "accur": 4.75, "atkSpd": 253, "castSpd": 333, "atkRadius": 40 },
@@ -2952,7 +2952,7 @@
     "rewards": { "exp": 1.33, "sp": 379 }
 },{
     "selfId": 247,
-    "dispSelfId": -1,
+    "dispSelfId": 21084,
     "template": { "kind": "Monster", "name": "Bloody Queen", "title": "", "level": 60, "hostile": false },
     "base": { "str": 40, "dex": 30, "con": 43, "int": 21, "wit": 20, "men": 10 },
     "stats": { "pAtk": 529.480063476039, "pAtkRnd": 30, "pDef": 247.65008459062, "mAtk": 328.696588226919, "mDef": 181.219584068938, "accur": 4.75, "atkSpd": 253, "castSpd": 333, "atkRadius": 40 },
@@ -3324,7 +3324,7 @@
     "rewards": { "exp": 1.2, "sp": 341 }
 },{
     "selfId": 278,
-    "dispSelfId": -1,
+    "dispSelfId": 21084,
     "template": { "kind": "Monster", "name": "Bloody Queen", "title": "", "level": 60, "hostile": false },
     "base": { "str": 40, "dex": 30, "con": 43, "int": 21, "wit": 20, "men": 10 },
     "stats": { "pAtk": 529.480063476039, "pAtkRnd": 30, "pDef": 247.65008459062, "mAtk": 328.696588226919, "mDef": 181.219584068938, "accur": 4.75, "atkSpd": 253, "castSpd": 333, "atkRadius": 40 },
@@ -4116,7 +4116,7 @@
     "rewards": { "exp": 2.94, "sp": 10 }
 },{
     "selfId": 344,
-    "dispSelfId": -1,
+    "dispSelfId": 25373,
     "template": { "kind": "Monster", "name": "Malex Herald Of Dagoniel", "title": "", "level": 30, "hostile": true },
     "base": { "str": 40, "dex": 30, "con": 43, "int": 21, "wit": 20, "men": 10 },
     "stats": { "pAtk": 101.906487366668, "pAtkRnd": 30, "pDef": 118.464274913098, "mAtk": 63.2626552465637, "mDef": 86.6870151175919, "accur": 4.75, "atkSpd": 253, "castSpd": 333, "atkRadius": 40 },
@@ -4728,7 +4728,7 @@
     "rewards": { "exp": 1.96, "sp": 18 }
 },{
     "selfId": 395,
-    "dispSelfId": -1,
+    "dispSelfId": 20385,
     "template": { "kind": "Monster", "name": "Brae Orc Archer", "title": "", "level": 13, "hostile": false },
     "base": { "str": 40, "dex": 30, "con": 43, "int": 21, "wit": 20, "men": 10 },
     "stats": { "pAtk": 57.4411172124866, "pAtkRnd": 10, "pDef": 70.8914052477435, "mAtk": 17.100922194757, "mDef": 50.2530785470691, "accur": 0, "atkSpd": 227, "castSpd": 333, "atkRadius": 500 },
@@ -4740,7 +4740,7 @@
     "rewards": { "exp": 4.2, "sp": 28 }
 },{
     "selfId": 396,
-    "dispSelfId": -1,
+    "dispSelfId": 20386,
     "template": { "kind": "Monster", "name": "Brae Orc Fighter", "title": "", "level": 15, "hostile": false },
     "base": { "str": 40, "dex": 30, "con": 43, "int": 21, "wit": 20, "men": 10 },
     "stats": { "pAtk": 32.5785976788137, "pAtkRnd": 30, "pDef": 73.5521582805718, "mAtk": 20.2245082391626, "mDef": 53.8222773192738, "accur": 4.75, "atkSpd": 253, "castSpd": 333, "atkRadius": 40 },
@@ -4752,7 +4752,7 @@
     "rewards": { "exp": 3.65, "sp": 33 }
 },{
     "selfId": 397,
-    "dispSelfId": -1,
+    "dispSelfId": 20387,
     "template": { "kind": "Monster", "name": "Brae Orc Chief", "title": "", "level": 17, "hostile": false },
     "base": { "str": 40, "dex": 30, "con": 43, "int": 21, "wit": 20, "men": 10 },
     "stats": { "pAtk": 38.387687430923, "pAtkRnd": 30, "pDef": 78.6846933884443, "mAtk": 23.8307403032876, "mDef": 57.578043762905, "accur": 4.75, "atkSpd": 253, "castSpd": 333, "atkRadius": 40 },
@@ -4884,7 +4884,7 @@
     "rewards": { "exp": 29.39, "sp": 2 }
 },{
     "selfId": 408,
-    "dispSelfId": -1,
+    "dispSelfId": 25363,
     "template": { "kind": "Monster", "name": "Sharuk's Henchmen", "title": "", "level": 26, "hostile": false },
     "base": { "str": 40, "dex": 30, "con": 43, "int": 21, "wit": 20, "men": 10 },
     "stats": { "pAtk": 69.7592646555834, "pAtkRnd": 30, "pDef": 115.530996050069, "mAtk": 47.636534892123, "mDef": 76.8550626798252, "accur": 4.75, "atkSpd": 253, "castSpd": 333, "atkRadius": 40 },
@@ -4944,7 +4944,7 @@
     "rewards": { "exp": 1.2, "sp": 213 }
 },{
     "selfId": 413,
-    "dispSelfId": -1,
+    "dispSelfId": 20040,
     "template": { "kind": "Monster", "name": "Sukar Wererat Warrior", "title": "", "level": 25, "hostile": false },
     "base": { "str": 40, "dex": 30, "con": 43, "int": 21, "wit": 20, "men": 10 },
     "stats": { "pAtk": 64.8320303490552, "pAtkRnd": 30, "pDef": 112.018863744696, "mAtk": 44.2718725763225, "mDef": 74.5186754097605, "accur": 4.75, "atkSpd": 253, "castSpd": 333, "atkRadius": 40 },
@@ -4956,7 +4956,7 @@
     "rewards": { "exp": 2.44, "sp": 76 }
 },{
     "selfId": 414,
-    "dispSelfId": -1,
+    "dispSelfId": 20040,
     "template": { "kind": "Monster", "name": "Sukar Wererat Chief", "title": "", "level": 28, "hostile": false },
     "base": { "str": 40, "dex": 30, "con": 43, "int": 21, "wit": 20, "men": 10 },
     "stats": { "pAtk": 80.5405590081038, "pAtkRnd": 30, "pDef": 122.775046237955, "mAtk": 54.9987613597006, "mDef": 81.6740458988784, "accur": 4.75, "atkSpd": 253, "castSpd": 333, "atkRadius": 40 },
@@ -4992,7 +4992,7 @@
     "rewards": { "exp": 1.63, "sp": 23 }
 },{
     "selfId": 417,
-    "dispSelfId": -1,
+    "dispSelfId": 25355,
     "template": { "kind": "Monster", "name": "Sirocco Gargoyle", "title": "", "level": 43, "hostile": false },
     "base": { "str": 40, "dex": 30, "con": 43, "int": 21, "wit": 20, "men": 10 },
     "stats": { "pAtk": 216.828699723255, "pAtkRnd": 30, "pDef": 174.593841760541, "mAtk": 143.435771231034, "mDef": 123.765046174005, "accur": 4.75, "atkSpd": 253, "castSpd": 333, "atkRadius": 40 },
@@ -5412,7 +5412,7 @@
     "rewards": { "exp": 2.66, "sp": 54 }
 },{
     "selfId": 452,
-    "dispSelfId": -1,
+    "dispSelfId": 25380,
     "template": { "kind": "Monster", "name": "Kaysha Herald Of Ikaros", "title": "", "level": 30, "hostile": true },
     "base": { "str": 40, "dex": 30, "con": 43, "int": 21, "wit": 20, "men": 10 },
     "stats": { "pAtk": 101.906487366668, "pAtkRnd": 30, "pDef": 118.464274913098, "mAtk": 63.2626552465637, "mDef": 86.6870151175919, "accur": 4.75, "atkSpd": 253, "castSpd": 333, "atkRadius": 40 },
@@ -5496,7 +5496,7 @@
     "rewards": { "exp": 1.4, "sp": 32 }
 },{
     "selfId": 459,
-    "dispSelfId": -1,
+    "dispSelfId": 25375,
     "template": { "kind": "Monster", "name": "Zombie Lord Farakelsus", "title": "", "level": 29, "hostile": false },
     "base": { "str": 40, "dex": 30, "con": 43, "int": 21, "wit": 20, "men": 10 },
     "stats": { "pAtk": 95.062021797265, "pAtkRnd": 30, "pDef": 115.00597751854, "mAtk": 59.0136709389587, "mDef": 84.1563831718592, "accur": 4.75, "atkSpd": 253, "castSpd": 333, "atkRadius": 40 },
@@ -5592,7 +5592,7 @@
     "rewards": { "exp": 1.73, "sp": 21 }
 },{
     "selfId": 467,
-    "dispSelfId": -1,
+    "dispSelfId": 25362,
     "template": { "kind": "Monster", "name": "Tracker Sharuk", "title": "", "level": 28, "hostile": false },
     "base": { "str": 40, "dex": 30, "con": 43, "int": 21, "wit": 20, "men": 10 },
     "stats": { "pAtk": 80.5405590081038, "pAtkRnd": 30, "pDef": 111.613678398141, "mAtk": 54.9987613597006, "mDef": 81.6740458988784, "accur": 4.75, "atkSpd": 253, "castSpd": 333, "atkRadius": 40 },
@@ -5796,7 +5796,7 @@
     "rewards": { "exp": 1.73, "sp": 21 }
 },{
     "selfId": 484,
-    "dispSelfId": -1,
+    "dispSelfId": 25367,
     "template": { "kind": "Monster", "name": "Follower Of Kuroboros", "title": "", "level": 29, "hostile": false },
     "base": { "str": 40, "dex": 30, "con": 43, "int": 21, "wit": 20, "men": 10 },
     "stats": { "pAtk": 86.4200198156954, "pAtkRnd": 30, "pDef": 126.506575270394, "mAtk": 59.0136709389587, "mDef": 84.1563831718592, "accur": 4.75, "atkSpd": 253, "castSpd": 333, "atkRadius": 40 },
@@ -5808,7 +5808,7 @@
     "rewards": { "exp": 2.27, "sp": 102 }
 },{
     "selfId": 485,
-    "dispSelfId": -1,
+    "dispSelfId": 25366,
     "template": { "kind": "Monster", "name": "Priest Of Kuroboros", "title": "", "level": 31, "hostile": true },
     "base": { "str": 40, "dex": 30, "con": 43, "int": 21, "wit": 20, "men": 10 },
     "stats": { "pAtk": 99.2198617906377, "pAtkRnd": 30, "pDef": 134.187011431931, "mAtk": 67.7543037690698, "mDef": 89.2656648606231, "accur": 4.75, "atkSpd": 253, "castSpd": 333, "atkRadius": 40 },
@@ -5820,7 +5820,7 @@
     "rewards": { "exp": 3.24, "sp": 173 }
 },{
     "selfId": 486,
-    "dispSelfId": -1,
+    "dispSelfId": 25368,
     "template": { "kind": "Monster", "name": "Soldier Of Kuroboros", "title": "", "level": 33, "hostile": false },
     "base": { "str": 40, "dex": 30, "con": 43, "int": 21, "wit": 20, "men": 10 },
     "stats": { "pAtk": 113.490654511985, "pAtkRnd": 30, "pDef": 142.154041867002, "mAtk": 77.4994052801751, "mDef": 94.5655985961041, "accur": 4.75, "atkSpd": 253, "castSpd": 333, "atkRadius": 40 },
@@ -8232,7 +8232,7 @@
     "rewards": { "exp": 1.2, "sp": 226 }
 },{
     "selfId": 687,
-    "dispSelfId": -1,
+    "dispSelfId": 25383,
     "template": { "kind": "Monster", "name": "Revenant Of Sir Calibus", "title": "", "level": 40, "hostile": false },
     "base": { "str": 40, "dex": 30, "con": 43, "int": 21, "wit": 20, "men": 10 },
     "stats": { "pAtk": 182.053719429628, "pAtkRnd": 30, "pDef": 161.603808270889, "mAtk": 120.431546585834, "mDef": 114.55674834152, "accur": 4.75, "atkSpd": 253, "castSpd": 333, "atkRadius": 40 },
@@ -8244,7 +8244,7 @@
     "rewards": { "exp": 3.24, "sp": 335 }
 },{
     "selfId": 688,
-    "dispSelfId": -1,
+    "dispSelfId": 25384,
     "template": { "kind": "Monster", "name": "Squire Of Calibus", "title": "", "level": 35, "hostile": false },
     "base": { "str": 40, "dex": 30, "con": 43, "int": 21, "wit": 20, "men": 10 },
     "stats": { "pAtk": 133.503709934051, "pAtkRnd": 30, "pDef": 141.143125790692, "mAtk": 88.3149122834552, "mDef": 100.052701197714, "accur": 4.75, "atkSpd": 253, "castSpd": 333, "atkRadius": 40 },
@@ -8280,7 +8280,7 @@
     "rewards": { "exp": 2.23, "sp": 140 }
 },{
     "selfId": 691,
-    "dispSelfId": -1,
+    "dispSelfId": 25388,
     "template": { "kind": "Monster", "name": "Redeye Leader Trakia", "title": "", "level": 40, "hostile": false },
     "base": { "str": 40, "dex": 30, "con": 43, "int": 21, "wit": 20, "men": 10 },
     "stats": { "pAtk": 182.053719429628, "pAtkRnd": 30, "pDef": 161.603808270889, "mAtk": 120.431546585834, "mDef": 114.55674834152, "accur": 4.75, "atkSpd": 253, "castSpd": 333, "atkRadius": 40 },
@@ -8292,7 +8292,7 @@
     "rewards": { "exp": 3.24, "sp": 335 }
 },{
     "selfId": 692,
-    "dispSelfId": -1,
+    "dispSelfId": 25390,
     "template": { "kind": "Monster", "name": "Redeye Guards", "title": "", "level": 33, "hostile": false },
     "base": { "str": 40, "dex": 30, "con": 43, "int": 21, "wit": 20, "men": 10 },
     "stats": { "pAtk": 117.154145942851, "pAtkRnd": 30, "pDef": 133.402537046416, "mAtk": 77.4994052801751, "mDef": 94.5655985961041, "accur": 4.75, "atkSpd": 253, "castSpd": 333, "atkRadius": 40 },
@@ -8328,7 +8328,7 @@
     "rewards": { "exp": 2.23, "sp": 140 }
 },{
     "selfId": 695,
-    "dispSelfId": -1,
+    "dispSelfId": 25023,
     "template": { "kind": "Monster", "name": "Stakato Queen Zyrnna", "title": "", "level": 43, "hostile": true },
     "base": { "str": 40, "dex": 30, "con": 43, "int": 21, "wit": 20, "men": 10 },
     "stats": { "pAtk": 216.828699723255, "pAtkRnd": 30, "pDef": 174.593841760541, "mAtk": 143.435771231034, "mDef": 123.765046174005, "accur": 4.75, "atkSpd": 253, "castSpd": 333, "atkRadius": 40 },
@@ -8436,7 +8436,7 @@
     "rewards": { "exp": 3.24, "sp": 356 }
 },{
     "selfId": 704,
-    "dispSelfId": -1,
+    "dispSelfId": 25402,
     "template": { "kind": "Monster", "name": "Skyla's Retainer", "title": "", "level": 39, "hostile": false },
     "base": { "str": 40, "dex": 30, "con": 43, "int": 21, "wit": 20, "men": 10 },
     "stats": { "pAtk": 171.425347862173, "pAtkRnd": 30, "pDef": 157.389194069391, "mAtk": 113.400702999844, "mDef": 111.56911764393, "accur": 4.75, "atkSpd": 253, "castSpd": 333, "atkRadius": 40 },
@@ -8520,7 +8520,7 @@
     "rewards": { "exp": 2.23, "sp": 314 }
 },{
     "selfId": 711,
-    "dispSelfId": -1,
+    "dispSelfId": 25412,
     "template": { "kind": "Monster", "name": "Necrosentinel Guard", "title": "", "level": 40, "hostile": true },
     "base": { "str": 40, "dex": 30, "con": 43, "int": 21, "wit": 20, "men": 10 },
     "stats": { "pAtk": 182.053719429628, "pAtkRnd": 30, "pDef": 161.603808270889, "mAtk": 120.431546585834, "mDef": 114.55674834152, "accur": 4.75, "atkSpd": 253, "castSpd": 333, "atkRadius": 40 },
@@ -8556,7 +8556,7 @@
     "rewards": { "exp": 3.24, "sp": 381 }
 },{
     "selfId": 714,
-    "dispSelfId": -1,
+    "dispSelfId": 18026,
     "template": { "kind": "Monster", "name": "Slave Of Nakondas", "title": "", "level": 37, "hostile": false },
     "base": { "str": 40, "dex": 30, "con": 43, "int": 21, "wit": 20, "men": 10 },
     "stats": { "pAtk": 151.565426851029, "pAtkRnd": 30, "pDef": 149.14133662061, "mAtk": 100.263036766284, "mDef": 105.722425414172, "accur": 4.75, "atkSpd": 253, "castSpd": 333, "atkRadius": 40 },
@@ -8592,7 +8592,7 @@
     "rewards": { "exp": 2.23, "sp": 314 }
 },{
     "selfId": 717,
-    "dispSelfId": -1,
+    "dispSelfId": 25420,
     "template": { "kind": "Monster", "name": "Handmaiden Of Orfen", "title": "", "level": 48, "hostile": false },
     "base": { "str": 40, "dex": 30, "con": 43, "int": 21, "wit": 20, "men": 10 },
     "stats": { "pAtk": 284.730774309043, "pAtkRnd": 30, "pDef": 197.297661947999, "mAtk": 188.354116675298, "mDef": 139.859195460672, "accur": 4.75, "atkSpd": 253, "castSpd": 333, "atkRadius": 40 },
@@ -8604,7 +8604,7 @@
     "rewards": { "exp": 3.24, "sp": 545 }
 },{
     "selfId": 718,
-    "dispSelfId": -1,
+    "dispSelfId": 25421,
     "template": { "kind": "Monster", "name": "Trisalim Escort", "title": "", "level": 47, "hostile": false },
     "base": { "str": 40, "dex": 30, "con": 43, "int": 21, "wit": 20, "men": 10 },
     "stats": { "pAtk": 270.143049629073, "pAtkRnd": 30, "pDef": 192.660314124232, "mAtk": 178.704095517361, "mDef": 136.571899862237, "accur": 4.75, "atkSpd": 253, "castSpd": 333, "atkRadius": 40 },
@@ -8640,7 +8640,7 @@
     "rewards": { "exp": 2.23, "sp": 545 }
 },{
     "selfId": 721,
-    "dispSelfId": -1,
+    "dispSelfId": 25426,
     "template": { "kind": "Monster", "name": "Betrayer Of Urutu Freki", "title": "", "level": 25, "hostile": true },
     "base": { "str": 40, "dex": 30, "con": 43, "int": 21, "wit": 20, "men": 10 },
     "stats": { "pAtk": 66.9248157739934, "pAtkRnd": 30, "pDef": 105.122586908787, "mAtk": 44.2718725763225, "mDef": 74.5186754097605, "accur": 4.75, "atkSpd": 253, "castSpd": 333, "atkRadius": 40 },
@@ -8652,7 +8652,7 @@
     "rewards": { "exp": 3.54, "sp": 111 }
 },{
     "selfId": 722,
-    "dispSelfId": -1,
+    "dispSelfId": 25427,
     "template": { "kind": "Monster", "name": "Frekis Bloodseeker Bats", "title": "", "level": 22, "hostile": false },
     "base": { "str": 40, "dex": 30, "con": 43, "int": 21, "wit": 20, "men": 10 },
     "stats": { "pAtk": 53.4233694157268, "pAtkRnd": 30, "pDef": 95.6479129306508, "mAtk": 35.3404424953224, "mDef": 67.8023247609444, "accur": 4.75, "atkSpd": 253, "castSpd": 333, "atkRadius": 40 },
@@ -8676,7 +8676,7 @@
     "rewards": { "exp": 1.2, "sp": 132 }
 },{
     "selfId": 724,
-    "dispSelfId": -1,
+    "dispSelfId": 20932,
     "template": { "kind": "Monster", "name": "Crimson Bear", "title": "", "level": 37, "hostile": true },
     "base": { "str": 40, "dex": 30, "con": 43, "int": 21, "wit": 20, "men": 10 },
     "stats": { "pAtk": 161.508457868943, "pAtkRnd": 30, "pDef": 144.477583542986, "mAtk": 100.263036766284, "mDef": 105.722425414172, "accur": 4.75, "atkSpd": 253, "castSpd": 333, "atkRadius": 40 },
@@ -8700,7 +8700,7 @@
     "rewards": { "exp": 1.2, "sp": 108 }
 },{
     "selfId": 726,
-    "dispSelfId": -1,
+    "dispSelfId": 21021,
     "template": { "kind": "Monster", "name": "Saber Toothed Tiger", "title": "", "level": 36, "hostile": true },
     "base": { "str": 40, "dex": 30, "con": 43, "int": 21, "wit": 20, "men": 10 },
     "stats": { "pAtk": 151.651134149242, "pAtkRnd": 30, "pDef": 140.57278398777, "mAtk": 94.1436964941632, "mDef": 102.86506256514, "accur": 4.75, "atkSpd": 253, "castSpd": 333, "atkRadius": 40 },
@@ -8712,7 +8712,7 @@
     "rewards": { "exp": 1.2, "sp": 94 }
 },{
     "selfId": 727,
-    "dispSelfId": -1,
+    "dispSelfId": 21086,
     "template": { "kind": "Monster", "name": "Liviona", "title": "", "level": 39, "hostile": true },
     "base": { "str": 40, "dex": 30, "con": 43, "int": 21, "wit": 20, "men": 10 },
     "stats": { "pAtk": 166.064758291296, "pAtkRnd": 30, "pDef": 167.714277243237, "mAtk": 113.400702999844, "mDef": 111.56911764393, "accur": 4.75, "atkSpd": 253, "castSpd": 333, "atkRadius": 40 },
@@ -8724,7 +8724,7 @@
     "rewards": { "exp": 1.2, "sp": 116 }
 },{
     "selfId": 728,
-    "dispSelfId": -1,
+    "dispSelfId": 20681,
     "template": { "kind": "Monster", "name": "Heltor Silenos", "title": "", "level": 40, "hostile": false },
     "base": { "str": 40, "dex": 30, "con": 43, "int": 21, "wit": 20, "men": 10 },
     "stats": { "pAtk": 182.053719429628, "pAtkRnd": 30, "pDef": 161.603808270889, "mAtk": 120.431546585834, "mDef": 114.55674834152, "accur": 4.75, "atkSpd": 253, "castSpd": 333, "atkRadius": 40 },
@@ -8736,7 +8736,7 @@
     "rewards": { "exp": 1.2, "sp": 124 }
 },{
     "selfId": 729,
-    "dispSelfId": -1,
+    "dispSelfId": 20686,
     "template": { "kind": "Monster", "name": "Heltor Silenos Chieftain", "title": "", "level": 45, "hostile": false },
     "base": { "str": 40, "dex": 30, "con": 43, "int": 21, "wit": 20, "men": 10 },
     "stats": { "pAtk": 234.898291890002, "pAtkRnd": 30, "pDef": 177.787457476699, "mAtk": 160.405083582293, "mDef": 130.097145534437, "accur": 4.75, "atkSpd": 253, "castSpd": 333, "atkRadius": 40 },
@@ -8748,7 +8748,7 @@
     "rewards": { "exp": 1.2, "sp": 169 }
 },{
     "selfId": 730,
-    "dispSelfId": -1,
+    "dispSelfId": 20682,
     "template": { "kind": "Monster", "name": "Heltor Silenos Hunter", "title": "", "level": 41, "hostile": false },
     "base": { "str": 40, "dex": 30, "con": 43, "int": 21, "wit": 20, "men": 10 },
     "stats": { "pAtk": 187.118780476983, "pAtkRnd": 30, "pDef": 176.759019661826, "mAtk": 127.77787092757, "mDef": 117.585981249973, "accur": 4.75, "atkSpd": 253, "castSpd": 333, "atkRadius": 40 },
@@ -8760,7 +8760,7 @@
     "rewards": { "exp": 1.2, "sp": 132 }
 },{
     "selfId": 731,
-    "dispSelfId": -1,
+    "dispSelfId": 20685,
     "template": { "kind": "Monster", "name": "Heltor Silenos Shaman", "title": "", "level": 44, "hostile": false },
     "base": { "str": 40, "dex": 30, "con": 43, "int": 21, "wit": 20, "men": 10 },
     "stats": { "pAtk": 244.454229970673, "pAtkRnd": 30, "pDef": 173.435520214248, "mAtk": 151.755045962434, "mDef": 126.912586716704, "accur": 4.75, "atkSpd": 253, "castSpd": 333, "atkRadius": 40 },
@@ -8772,7 +8772,7 @@
     "rewards": { "exp": 1.2, "sp": 159 }
 },{
     "selfId": 732,
-    "dispSelfId": -1,
+    "dispSelfId": 20684,
     "template": { "kind": "Monster", "name": "Heltor Silenos Warrior", "title": "", "level": 42, "hostile": true },
     "base": { "str": 40, "dex": 30, "con": 43, "int": 21, "wit": 20, "men": 10 },
     "stats": { "pAtk": 218.180498036163, "pAtkRnd": 30, "pDef": 164.885131318131, "mAtk": 135.444543183224, "mDef": 120.655783203216, "accur": 4.75, "atkSpd": 253, "castSpd": 333, "atkRadius": 40 },
@@ -23160,7 +23160,7 @@
     "rewards": { "exp": 0.1, "sp": 1 }
 },{
     "selfId": 12079,
-    "dispSelfId": -1,
+    "dispSelfId": 21084,
     "template": { "kind": "Monster", "name": "Bloody Queen", "title": "", "level": 60, "hostile": false },
     "base": { "str": 40, "dex": 30, "con": 43, "int": 21, "wit": 20, "men": 10 },
     "stats": { "pAtk": 529.480063476039, "pAtkRnd": 30, "pDef": 247.65008459062, "mAtk": 328.696588226919, "mDef": 181.219584068938, "accur": 3.75, "atkSpd": 257, "castSpd": 333, "atkRadius": 40 },
