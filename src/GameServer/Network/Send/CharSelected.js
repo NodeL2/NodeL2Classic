@@ -22,7 +22,7 @@ function charSelected(actor) {
         .writeQ(actor.fetchSp())
         .writeQ(actor.fetchExp())
         .writeD(actor.fetchLevel())
-        .writeD(0x00) // Reputation
+        .writeD(actor.fetchReputation())
         .writeD(actor.fetchPK())
         .writeD(0x00)  // Game time
         .writeD(0x00)  // ?

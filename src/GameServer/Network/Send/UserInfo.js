@@ -6,7 +6,7 @@ function userInfo(actor, masks) {
     packet
         .writeD(actor.fetchId())
         .writeD(masks.fetchSize())
-        .writeH(23)
+        .writeH(24)
         .writeB(masks.fetchMasks());
 
     if (masks.contains(masks.component.M_RELATION)) {
@@ -196,7 +196,9 @@ function userInfo(actor, masks) {
 
     if (masks.contains(masks.component.M_SLOTS)) {
         packet
-            .writeH(9)
+            .writeH(11)
+            .writeC(0x00)  // ?
+            .writeC(0x00)  // ?
             .writeC(0x00)  // ?
             .writeC(0x00)  // ?
             .writeC(0x00)  // ?

@@ -9,7 +9,7 @@ function charSelectInfo(characters) {
         .writeC(0x00)  // Character creation forbidden
         .writeC(0x02)  // Free
         .writeD(0x02)  // EU client
-        .writeC(0x00); // Premium account
+        .writeH(0x00); // ?
 
     characters.forEach((character) => {
         packet
@@ -18,11 +18,11 @@ function charSelectInfo(characters) {
             .writeS(character.username)
             .writeD(0x55555555)
             .writeD(0x00)  // Clan Id
-            .writeD(0x00)  // ?
+            .writeD(0x00)  // Builder Level
             .writeD(character.sex)
             .writeD(character.race)
             .writeD(character.classId)
-            .writeD(0x01)  // ?
+            .writeD(0x01)  // GameServer Name
             .writeD(character.locX)
             .writeD(character.locY)
             .writeD(character.locZ)
@@ -51,6 +51,11 @@ function charSelectInfo(characters) {
         }
 
         packet
+            .writeD(0x00)  // ?
+            .writeD(0x00)  // ?
+            .writeD(0x00)  // ?
+            .writeD(0x00)  // ?
+            .writeD(0x00)  // ?
             .writeD(character.paperdoll[ 7].selfId)  // Weapon
             .writeD(character.paperdoll[ 8].selfId)  // Shield
             .writeD(character.paperdoll[ 9].selfId)  // Hands
@@ -81,8 +86,8 @@ function charSelectInfo(characters) {
             .writeD(0x00)  // Pet Level
             .writeD(0x00)  // Pet Food
             .writeD(0x00)  // Pet Food Level
-            .writeQ(0x00)  // Current Pet HP
-            .writeQ(0x00)  // Current Pet MP
+            .writeF(0.0)   // Current Pet HP
+            .writeF(0.0)   // Current Pet MP
             .writeD(0x00)  // ?
             .writeD(0x00)  // ?
             .writeD(0x00)  // ?
