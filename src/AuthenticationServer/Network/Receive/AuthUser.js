@@ -7,16 +7,16 @@ function authUser(session, buffer) {
 
     packet
         .readB(128) // Enciphered Block
+        .readB(128) // Enciphered Block
         .readD();   // Session Id
 
-    const deciphered = require('rsa-raw').decipher(
-        packet.data[0]
-    );
+    const rsa  = require('rsa-raw');
+    const data = rsa.decipher(packet.data[0]) + rsa.decipher(packet.data[1]);
 
     consume(session, {
-         username: utils.stripNull(deciphered.slice(0x5e, 0x5e + 14)),
-         password: utils.stripNull(deciphered.slice(0x6c, 0x6c + 16)),
-        sessionId: packet.data[1]
+         username: utils.stripNull(data.slice(0x4e, 0x4e + 50) + data.slice(0xce, 0xce + 14)),
+         password: utils.stripNull(data.slice(0xdc, 0xdc + 16)),
+        sessionId: packet.data[2]
     });
 }
 
