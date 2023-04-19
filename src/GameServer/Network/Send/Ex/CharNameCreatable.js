@@ -1,10 +1,9 @@
-const PacketSend = invoke('Packet/Send');
+const PacketSendEx = invoke('Packet/SendEx');
 
 function charNameCreatable(resultCode) {
-    const packet = new PacketSend(0xfe);
+    const packet = new PacketSendEx(0xfe, 0x10b);
 
     packet
-        .writeH(0x10b)
         .writeD(resultCode);
 
     return packet.fetchBuffer();

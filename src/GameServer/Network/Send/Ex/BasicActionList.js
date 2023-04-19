@@ -1,11 +1,10 @@
-const PacketSend = invoke('Packet/Send');
+const PacketSendEx = invoke('Packet/SendEx');
 
 function basicActionList() {
-    const packet = new PacketSend(0xfe);
+    const packet = new PacketSendEx(0xfe, 0x060);
 
     packet
-        .writeH(0x60)
-        .writeD(17)
+        .writeD(17)  // Count
 
         .writeD( 0)  // Sit/Stand
         .writeD( 1)  // Walk/Run
