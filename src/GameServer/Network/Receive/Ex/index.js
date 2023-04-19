@@ -1,4 +1,5 @@
 module.exports = {
            backToHall: require('./BackToHall'),
-    charNameCreatable: require('./CharNameCreatable')
+    charNameCreatable: require('./CharNameCreatable'),
+        passwordCheck: require('./PasswordCheck')
 };

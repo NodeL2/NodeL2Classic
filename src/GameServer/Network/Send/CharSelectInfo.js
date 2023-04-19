@@ -76,6 +76,7 @@ function charSelectInfo(characters) {
             .writeC(0x00)  // ?
             .writeD(0x00)  // ?
             .writeD(0x00)  // ?
+            .writeD(0x00)  // ?
             .writeD(0x00)  // Pet Id
             .writeD(0x00)  // Pet Level
             .writeD(0x00)  // Pet Food

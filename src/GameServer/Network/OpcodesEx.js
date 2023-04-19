@@ -15,6 +15,7 @@ const OpcodesEx = {
         table[0x03a] = () => {}; // Fortress Info
         table[0x03c] = () => {}; // Fortress Attack Info
         table[0x060] = () => {}; // Request Seed Phase
+        table[0x0a6] = ClientRequestEx.passwordCheck;
         table[0x0a9] = ClientRequestEx.charNameCreatable;
         table[0x0d1] = () => {}; // ?
 
