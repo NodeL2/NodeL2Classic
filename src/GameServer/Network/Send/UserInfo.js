@@ -86,7 +86,7 @@ function userInfo(actor, masks) {
     if (masks.contains(masks.component.M_STATS)) {
         packet
             .writeH(56)
-            .writeH(0x00)  // ?
+            .writeH(0x00)  // Active Weapon Item
             .writeD(actor.fetchPAtk())
             .writeD(actor.fetchAtkSpd())
             .writeD(actor.fetchPDef())
@@ -196,13 +196,11 @@ function userInfo(actor, masks) {
 
     if (masks.contains(masks.component.M_SLOTS)) {
         packet
-            .writeH(11)
+            .writeH(12)
             .writeC(0x00)  // ?
             .writeC(0x00)  // ?
             .writeC(0x00)  // ?
-            .writeC(0x00)  // ?
-            .writeC(0x00)  // ?
-            .writeC(0x00)  // ?
+            .writeD(0x00)  // ?
             .writeC(0x00)  // ?
             .writeC(0x00)  // ?
             .writeC(0x00); // ?
@@ -234,9 +232,9 @@ function userInfo(actor, masks) {
     if (masks.contains(masks.component.M_TRUE_HERO)) {
         packet
             .writeH(9)
-            .writeC(0x01)  // ?
+            .writeD(0x00)  // ?
             .writeH(0x00)  // ?
-            .writeD(0x00);
+            .writeC(0x00);
     }
 
     return packet.fetchBuffer();

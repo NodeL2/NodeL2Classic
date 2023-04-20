@@ -9,7 +9,8 @@ function charSelectInfo(characters) {
         .writeC(0x00)  // Character creation forbidden
         .writeC(0x02)  // Free
         .writeD(0x02)  // EU client
-        .writeH(0x00); // ?
+        .writeC(0x00)  // ?
+        .writeC(0x00); // ?
 
     characters.forEach((character) => {
         packet
@@ -45,17 +46,12 @@ function charSelectInfo(characters) {
             .writeD(0x00)  // ?
             .writeD(0x00); // ?
 
-        for (let i = 0; i < 33; i++) {
+        for (let i = 0; i < 60; i++) {
             packet
                 .writeD(character.paperdoll[i].id);
         }
 
         packet
-            .writeD(0x00)  // ?
-            .writeD(0x00)  // ?
-            .writeD(0x00)  // ?
-            .writeD(0x00)  // ?
-            .writeD(0x00)  // ?
             .writeD(character.paperdoll[ 7].selfId)  // Weapon
             .writeD(character.paperdoll[ 8].selfId)  // Shield
             .writeD(character.paperdoll[ 9].selfId)  // Hands

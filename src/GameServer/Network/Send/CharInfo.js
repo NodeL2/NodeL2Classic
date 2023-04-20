@@ -4,6 +4,7 @@ function charInfo(actor) {
     const packet = new PacketSend(0x31);
 
     packet
+        .writeC(0x00)  // ?
         .writeD(actor.fetchLocX())
         .writeD(actor.fetchLocY())
         .writeD(actor.fetchLocZ())
@@ -25,6 +26,9 @@ function charInfo(actor) {
         .writeD(actor.backpack.fetchPaperdollId(14))  // Dual Weapon
         .writeD(actor.backpack.fetchPaperdollId(15))  // Hair
         .writeD(actor.backpack.fetchPaperdollId(16))  // Hair?
+        .writeD(0x00)
+        .writeD(0x00)
+        .writeD(0x00)
         .writeD(0x00)
         .writeD(0x00)
         .writeD(0x00)
@@ -72,7 +76,7 @@ function charInfo(actor) {
         .writeH(0x00)  // Cubic count
         .writeC(0x00)  // Teamup Match
         .writeC(0x00)  // ?
-        .writeH(0x00)  // Recommendations won
+        .writeH(actor.fetchEvalScore())
         .writeD(0x00)  // Mount Id
         .writeD(actor.fetchClassId())
         .writeD(0x00)  // ?
@@ -96,10 +100,10 @@ function charInfo(actor) {
         .writeD(0x00)  // ?
         .writeC(0x00)  // ?
         .writeD(0x00)  // CP
-        .writeD(0x00)  // Max HP
-        .writeD(0x00)  // HP
-        .writeD(0x00)  // Max MP
-        .writeD(0x00)  // MP
+        .writeD(actor.fetchMaxHp())
+        .writeD(actor.fetchHp())
+        .writeD(actor.fetchMaxMp())
+        .writeD(actor.fetchMp())
         .writeC(0x00)  // ?
         .writeD(0x00)  // Abnormal effect
         .writeC(0x00)  // True Hero

@@ -8,7 +8,7 @@ const Shared = {
                 return new Promise((done) => {
                     Database.itemFetchAll(character.id).then((items) => {
                         character.items = items;
-                        character.paperdoll = utils.tupleAlloc(33 + 1, {});
+                        character.paperdoll = utils.tupleAlloc(60, {});
 
                         items.filter((ob) => ob.equipped === 1).forEach((item) => {
                             if (item.slot === 15) { // FB Armor, stupid implementation
